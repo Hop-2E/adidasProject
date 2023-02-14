@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const ItemSchema = new mongoose.Schema({
   name: {
@@ -13,6 +13,11 @@ const ItemSchema = new mongoose.Schema({
   },
   color: {
     type: Array,
+  },
+  user_id: {
+    type: Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
   },
 });
 const Item = mongoose.model("item", ItemSchema);
