@@ -3,17 +3,16 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import router from "./router/items.js";
+import routerUser from "./router/user.js";
 dotenv.config();
 const uri = process.env.MONGO_URI || "";
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 1234;
 const app = express();
-const corsOption = {
-  origin: "http://localhost:3000",
-  optionSuccesStatus: 200,
-};
-app.use(cors(corsOption));
+
+app.use(cors());
 app.use(express.json());
 app.use("/items", router);
+app.use("/customers", routerUser);
 
 const connect = () => {
   mongoose
