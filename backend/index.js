@@ -15,8 +15,10 @@ app.use("/items", router);
 app.use("/customers", routerUser);
 
 const connect = () => {
+  mongoose.set("strictQuery", false);
   mongoose
     .connect(uri, {})
+
     .then(() => {
       console.log("connected to DB");
     })
