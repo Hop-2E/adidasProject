@@ -1,9 +1,19 @@
 import "./App.css";
+import Header from "./components/header";
+import Home from "./pages/home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/header" element={<Header />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
