@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+}
+.headerZero{
+  height: 40px;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  height: 9vh;
+  width: 100vw;
+  justify-content: space-between;
+  
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100px;
+}
+.mainHeader{
+  display: flex ;
+  align-items:flex-end;
+  margin-left: 250px;
+  margin-bottom: 15px;
+}
+.mainHeader > div{
+  margin-left: 15px;
+  font-weight: bold;
+}
+.rightHeader{
+  display: flex;
+  flex-direction: column;
+ justify-content: flex-end;
+
+}
+.rightHeaderDiv{
+  display:flex ;
+  font-size:13px;
+  padding-right: 20px;
+}
+.rightHeaderDiv > div {
+  margin-left: 10px;
+  margin: 10px;
+}
+.mainLogin{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
