@@ -1,6 +1,8 @@
 *{
     margin: 0;
 }
+/*?Header*/
+
 .headerZero{
     height: 40px;
     width: 100vw;
@@ -16,13 +18,13 @@
     height: 80px;
     width: 100vw;
     justify-content: space-between;
-    
 }
 .logo{
     display: flex;
     flex-direction: row;
-    height: 100px;
-    width: 140px;
+    height: 70px;
+    width: 70px;
+    margin-left: 30px;
 }
 .mainHeader{
     display: flex ;
@@ -45,4 +47,14 @@
 .rightHeaderDiv > div {
     margin-left: 10px;
     margin: 10px;
+}
+
+/* Body */
+
+.Body{
+    height: calc(100vh);
+    background-size: contain;
+    width: 100vw;
+    background-image:url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
+    background-repeat: no-repeat;
 }
