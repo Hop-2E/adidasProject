@@ -1,4 +1,7 @@
 import { useRef } from "react";
+import { instance } from "../App";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SignUp = ({ value }) => {
   const stylesLogin = {
     signup: {
@@ -57,6 +60,18 @@ const SignUp = ({ value }) => {
   const emailRef = useRef();
   const passRef = useRef();
   const rePassRef = useRef();
+
+  const signupButton = async () => {
+    if (passRef.current.value === rePassRef.current.value) {
+      const res = await instance.post("/customers", {
+        username: emailRef.current.value,
+        password: passRef.current.value,
+      });
+      console.log(res.data.data);
+    } else {
+      toast("did not match password");
+    }
+  };
   return (
     <div className="signup" style={stylesLogin.signup}>
       <div className="signupContainer" style={stylesLogin.signupContainer}>
@@ -103,11 +118,16 @@ const SignUp = ({ value }) => {
           <div className="login">login</div>
         </div>
         <div className="submitContainer" style={stylesLogin.miniContainer}>
-          <button className="submit" style={stylesLogin.button}>
+          <button
+            className="submit"
+            style={stylesLogin.button}
+            onClick={signupButton}
+          >
             Submit
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

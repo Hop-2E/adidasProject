@@ -15,7 +15,6 @@ const Header = () => {
     } else {
       setdisplayLogin({ display: "none", isDisplay: false });
     }
-    console.log(displayLogin);
   };
   return (
     <>
