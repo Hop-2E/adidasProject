@@ -1,8 +1,22 @@
 import Logo from "../assets/adidasLogo.png";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useState } from "react";
+import SignUp from "./signup";
 
 const Header = () => {
+  const [displayLogin, setdisplayLogin] = useState({
+    display: "none",
+    isDisplay: false,
+  });
+  const signupPage = () => {
+    if (displayLogin.isDisplay === false) {
+      setdisplayLogin({ display: "inline", isDisplay: true });
+    } else {
+      setdisplayLogin({ display: "none", isDisplay: false });
+    }
+    console.log(displayLogin);
+  };
   return (
     <>
       <div className="headerZero">
@@ -65,6 +79,7 @@ const Header = () => {
                 fill="currentColor"
                 class="bi bi-person"
                 viewBox="0 0 16 16"
+                onClick={signupPage}
               >
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
               </svg>
@@ -95,8 +110,38 @@ const Header = () => {
             </div>
           </div>
         </div>
+        <SignUp value={displayLogin.display} />
       </div>
     </>
   );
 };
 export default Header;
+const styles = {
+  headerZero: {
+    height: "40px",
+    width: "100vw",
+    backgroundColor: "black",
+    color: "white",
+    display: "flex",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    height: "80px",
+    width: "100vw",
+    justifyContent: "space-between",
+  },
+  logo: {
+    display: "flex",
+    flexdirection: "row",
+    height: "100px",
+    width: "140px",
+  },
+  mainHeader: {
+    display: "flex",
+    alignItems: "flex-end",
+    marginBottom: "15px",
+  },
+};
