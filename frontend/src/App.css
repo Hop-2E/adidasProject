@@ -55,6 +55,21 @@
     height: calc(100vh);
     background-size: contain;
     width: 100vw;
-    background-image:url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
+    background-image:url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/sportswear-SS23-global-launch-hp-masthead-primary-d_tcm221-984109.jpg");
     background-repeat: no-repeat;
+    color: white;
+}
+.headerCards{
+    display: flex;
+    height:auto ;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+}
+.text{
+    display: flex;
+    justify-content: space-between;
 }
