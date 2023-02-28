@@ -1,7 +1,7 @@
 import "./App.css";
 import axios from "axios";
-import Header from "./components/header";
-import Home from "./pages/home";
+import Header from "./components/Header";
+import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 export const instance = axios.create({
   baseURL: "http://localhost:1234",

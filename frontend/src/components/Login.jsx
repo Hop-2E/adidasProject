@@ -2,7 +2,17 @@ import { useRef } from "react";
 import { instance } from "../App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const SignUp = ({ value }) => {
+import { useState } from "react";
+const Login = ({ value }) => {
+  const [switched, setSwitched] = useState(false);
+  const loginToSignup = () => {
+    if (switched) {
+      setSwitched(false);
+    } else {
+      setSwitched(true);
+    }
+  };
+
   const stylesLogin = {
     signup: {
       width: "30vw",
@@ -52,6 +62,13 @@ const SignUp = ({ value }) => {
       flexDirection: "column",
       alignItems: "center",
     },
+    none: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      visibility: switched ? "" : "hidden",
+    },
     email: {
       width: "90%",
     },
@@ -59,24 +76,43 @@ const SignUp = ({ value }) => {
 
   const emailRef = useRef();
   const passRef = useRef();
-  const rePassRef = useRef();
+  const repassRef = useRef();
 
-  const signupButton = async () => {
-    if (passRef.current.value === rePassRef.current.value) {
-      const res = await instance.post("/customers", {
-        username: emailRef.current.value,
-        password: passRef.current.value,
-      });
-      console.log(res.data.data);
+  const loginButton = async () => {
+    if (!switched) {
+      try {
+        const res = await instance.post("/customers/login", {
+          username: emailRef.current.value,
+          password: passRef.current.value,
+        });
+        toast("successful");
+        localStorage.setItem("token", JSON.stringify(res.data.token));
+        localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
+        localStorage.setItem("role", JSON.stringify(res.data.data.role));
+      } catch (error) {
+        toast(error.response.data.error);
+      }
     } else {
-      toast("did not match password");
+      if (repassRef.current.value === passRef.current.value) {
+        try {
+          const res = await instance.post("/customers", {
+            username: emailRef.current.value,
+            password: passRef.current.value,
+          });
+        } catch (error) {
+          toast(error.response.data.error);
+        }
+      } else {
+        toast("does not match password");
+      }
     }
   };
+
   return (
     <div className="signup" style={stylesLogin.signup}>
       <div className="signupContainer" style={stylesLogin.signupContainer}>
         <div className="signupTitle" style={stylesLogin.signupTitle}>
-          Sign Up
+          {switched ? "signup" : "login"}
         </div>
         <div className="inputContainer" style={stylesLogin.inputContainer}>
           <div className="emailContainer" style={stylesLogin.miniContainer}>
@@ -101,27 +137,29 @@ const SignUp = ({ value }) => {
               ref={passRef}
             />
           </div>
-          <div className="passwordContainer" style={stylesLogin.miniContainer}>
+          <div className="passwordContainer" style={stylesLogin.none}>
             <div className="email" style={stylesLogin.email}>
-              repeat password
+              password
             </div>
             <input
               type="text"
               className="signInput"
               style={stylesLogin.input}
-              ref={rePassRef}
+              ref={repassRef}
             />
           </div>
         </div>
         <div className="signupToLogin">
-          if you have an account
-          <div className="login">login</div>
+          if you dont have an account
+          <div className="signupJumper" onClick={loginToSignup}>
+            signup
+          </div>
         </div>
         <div className="submitContainer" style={stylesLogin.miniContainer}>
           <button
             className="submit"
             style={stylesLogin.button}
-            onClick={signupButton}
+            onClick={loginButton}
           >
             Submit
           </button>
@@ -131,4 +169,4 @@ const SignUp = ({ value }) => {
     </div>
   );
 };
-export default SignUp;
+export default Login;
