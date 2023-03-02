@@ -1,86 +1,186 @@
-const styles = {
-    border:{
-        marginTop:"10%",
-        marginLeft:"35%",
-        border:"1px solid black",
-        width:"20%",
-        padding:"2%",
-    },
-    bold:{
-        fontSize:"170%"
-
-    },
-    input:{
-        width:"80%",
-        height:"40px",
-        fontSize:"120%"
-    },
-    checkbox:{
-        accentColor:"black"
-    },
-    CONTINUE:{
-        width:"82%",
-        height:"40px",
-        backgroundColor:"black",
-        color:"aliceblue",
-        display: "flex",
-        alignItems: "center",
-        gap: "65%",
-    },
-    img:{
-        width: "26px",
-        height: "10px",
-    },
-    x:{
-        width:"57px",
-        height:"57px",
-        marginLeft:"101%",
-        fontSize:"190%",
-        marginTop:"-100%",
-        backgroundColor:"white"
+import { useRef } from "react";
+import { instance } from "../App";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+const Login = ({ value }) => {
+  const [switched, setSwitched] = useState(false);
+  const loginToSignup = () => {
+    if (switched) {
+      setSwitched(false);
+    } else {
+      setSwitched(true);
     }
-}
+  };
 
-const Login = () =>{
+  const stylesLogin = {
+    signup: {
+      width: "30vw",
+      height: "600px",
+      backgroundColor: "white",
+      display: value,
+      position: "fixed",
+      top: 200,
+      left: "35vw",
+      border: "1px solid black",
+    },
+    signupContainer: {
+      width: "30vw",
+      height: "600px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    signupTitle: {
+      fontSize: "30px",
+    },
+    inputContainer: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100%",
+    },
+    input: {
+      width: "90%",
+      height: "50px",
+      margin: "20px",
+      border: "0.5px solid grey",
+    },
+    button: {
+      width: "90%",
+      height: "50px",
+      margin: "20px",
+      border: "0.5px solid grey",
+      backgroundColor: "black",
+      color: "white",
+      font: "bold",
+      fontSize: "21px",
+    },
+    miniContainer: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    none: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      visibility: switched ? "" : "hidden",
+    },
+    email: {
+      width: "90%",
+    },
+    signTitle: {
+      fontSize: "30px",
+    },
+    coolLaber: {
+      width: "90%",
+      height: "45px",
+      marginTop: "20px",
+    },
+    signSwitch: {
+      width: "90%",
+      font: "bold",
+      display: "flex",
+      marginTop: "10px",
+      justifyContent: "center",
+    },
+  };
 
-    return (            
-            <div style={styles.border}>
-            <button style={styles.x} >X</button>
-                <div>
-                    <strong><p style={styles.bold}>YOUR ADICLUB BENEFITS AWAIT!</p></strong><br/>
-                    <p>Get free shipping, discount vouchers and members only products when you’re in adiClub</p><br/>
-                    <strong><p style={styles.bold}>LOG IN OR SIGN UP (IT'S FREE)</p></strong><br/>
-                    <p>Enter your email to access or create your account</p><br/>
-                </div>
-                
-                <br/>
+  const emailRef = useRef();
+  const passRef = useRef();
+  const repassRef = useRef();
 
-                <input style={styles.input} type="email" placeholder="Email"/><br/>
+  const loginButton = async () => {
+    if (!switched) {
+      try {
+        const res = await instance.post("/customers/login", {
+          username: emailRef.current.value,
+          password: passRef.current.value,
+        });
+        toast("successful");
+        localStorage.setItem("token", JSON.stringify(res.data.token));
+        localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
+        localStorage.setItem("role", JSON.stringify(res.data.data.role));
+        window.location.reload();
+      } catch (error) {
+        console.log("LOGIN AJILLA");
+        toast(error.response.data.error);
+      }
+    } else {
+      if (repassRef.current.value === passRef.current.value) {
+        try {
+          const res = await instance.post("/customers", {
+            username: emailRef.current.value,
+            password: passRef.current.value,
+          });
+        } catch (error) {
+          console.log(emailRef, passRef);
+          toast(error.response.data.error);
+        }
+      } else {
+        toast("does not match password");
+      }
+    }
+  };
 
-                <div>
-                    <br/>
-                    <p><p>Enter your password to access or create your account</p></p>
-                </div>
-                
-                <br/>
-
-                <input style={styles.input} type="password" placeholder="Password"/><br/>
-
-                <div>
-                    <br/>
-                        <p>  
-                            <input type="checkbox" style={styles.checkbox}/> 
-                            Keep me logged in - applies to all log in options below.
-                        </p>
-                </div><br/>
-
-                <button style={styles.CONTINUE} >
-                    CONTINUE 
-                    <img style={styles.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG4Bu7zkswJ03xi1f-S6VpQFvxl-UazPGSzAaOKvQTXTlVCvGTrzfYkAVn-vIgsy06SYI&usqp=CAU"/>
-                </button>
-                
-            </div>
-
-    )
-}
+  return (
+    <div className="signup" style={stylesLogin.signup}>
+      <div className="signupContainer" style={stylesLogin.signupContainer}>
+        <div className="signupTitle" style={stylesLogin.signTitle}>
+          LOG IN OR SIGN UP (IT'S FREE)
+        </div>
+        <div className="inputContainer" style={stylesLogin.inputContainer}>
+          <div className="emailContainer" style={stylesLogin.miniContainer}>
+            <input
+              type="text"
+              placeholder="email"
+              ref={emailRef}
+              style={stylesLogin.coolLaber}
+            />
+          </div>
+          <div className="passwordContainer" style={stylesLogin.miniContainer}>
+            <input
+              type="text"
+              placeholder="password"
+              ref={passRef}
+              style={stylesLogin.coolLaber}
+            />
+          </div>
+          <div className="passwordContainer" style={stylesLogin.none}>
+            <input
+              type="text"
+              ref={repassRef}
+              placeholder="password again"
+              style={stylesLogin.coolLaber}
+            />
+          </div>
+        </div>
+        <div className="signupToLogin" style={stylesLogin.signSwitch}>
+          if you dont have an account
+          <div
+            style={{ marginLeft: 5 }}
+            className="signupJumper"
+            onClick={loginToSignup}
+          >
+            {switched ? "login" : "signup"}
+          </div>
+        </div>
+        <div className="submitContainer" style={stylesLogin.miniContainer}>
+          <button
+            className="submit"
+            style={stylesLogin.button}
+            onClick={loginButton}
+          >
+            CONTINUE
+          </button>
+        </div>
+      </div>
+      <ToastContainer />
+    </div>
+  );
+};
 export default Login;
