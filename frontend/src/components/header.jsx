@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Login from "./Login";
 import "../App.css";
-const Header = ({ value }) => {
+const Header = () => {
   const [userid, setUserId] = useState();
   const [role, setRole] = useState();
 
