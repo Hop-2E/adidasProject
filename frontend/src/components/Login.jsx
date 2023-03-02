@@ -17,7 +17,7 @@ const Login = ({ value }) => {
     signup: {
       width: "30vw",
       height: "600px",
-      backgroundColor: "yellow",
+      backgroundColor: "white",
       display: value,
       position: "fixed",
       top: 200,
@@ -45,16 +45,17 @@ const Login = ({ value }) => {
       width: "90%",
       height: "50px",
       margin: "20px",
-      borderRadius: "10px",
       border: "0.5px solid grey",
     },
     button: {
       width: "90%",
       height: "50px",
       margin: "20px",
-      borderRadius: "10px",
       border: "0.5px solid grey",
-      backgroundColor: "green",
+      backgroundColor: "black",
+      color: "white",
+      font: "bold",
+      fontSize: "21px",
     },
     miniContainer: {
       width: "100%",
@@ -71,6 +72,21 @@ const Login = ({ value }) => {
     },
     email: {
       width: "90%",
+    },
+    signTitle: {
+      fontSize: "30px",
+    },
+    coolLaber: {
+      width: "90%",
+      height: "45px",
+      marginTop: "20px",
+    },
+    signSwitch: {
+      width: "90%",
+      font: "bold",
+      display: "flex",
+      marginTop: "10px",
+      justifyContent: "center",
     },
   };
 
@@ -89,7 +105,9 @@ const Login = ({ value }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
+        window.location.reload();
       } catch (error) {
+        console.log("LOGIN AJILLA");
         toast(error.response.data.error);
       }
     } else {
@@ -100,6 +118,7 @@ const Login = ({ value }) => {
             password: passRef.current.value,
           });
         } catch (error) {
+          console.log(emailRef, passRef);
           toast(error.response.data.error);
         }
       } else {
@@ -111,48 +130,43 @@ const Login = ({ value }) => {
   return (
     <div className="signup" style={stylesLogin.signup}>
       <div className="signupContainer" style={stylesLogin.signupContainer}>
-        <div className="signupTitle" style={stylesLogin.signupTitle}>
-          {switched ? "signup" : "login"}
+        <div className="signupTitle" style={stylesLogin.signTitle}>
+          LOG IN OR SIGN UP (IT'S FREE)
         </div>
         <div className="inputContainer" style={stylesLogin.inputContainer}>
           <div className="emailContainer" style={stylesLogin.miniContainer}>
-            <div className="email" style={stylesLogin.email}>
-              email
-            </div>
             <input
               type="text"
-              className="signInput"
-              style={stylesLogin.input}
+              placeholder="email"
               ref={emailRef}
+              style={stylesLogin.coolLaber}
             />
           </div>
           <div className="passwordContainer" style={stylesLogin.miniContainer}>
-            <div className="email" style={stylesLogin.email}>
-              password
-            </div>
             <input
               type="text"
-              className="signInput"
-              style={stylesLogin.input}
+              placeholder="password"
               ref={passRef}
+              style={stylesLogin.coolLaber}
             />
           </div>
           <div className="passwordContainer" style={stylesLogin.none}>
-            <div className="email" style={stylesLogin.email}>
-              password
-            </div>
             <input
               type="text"
-              className="signInput"
-              style={stylesLogin.input}
               ref={repassRef}
+              placeholder="password again"
+              style={stylesLogin.coolLaber}
             />
           </div>
         </div>
-        <div className="signupToLogin">
+        <div className="signupToLogin" style={stylesLogin.signSwitch}>
           if you dont have an account
-          <div className="signupJumper" onClick={loginToSignup}>
-            signup
+          <div
+            style={{ marginLeft: 5 }}
+            className="signupJumper"
+            onClick={loginToSignup}
+          >
+            {switched ? "login" : "signup"}
           </div>
         </div>
         <div className="submitContainer" style={stylesLogin.miniContainer}>
@@ -161,7 +175,7 @@ const Login = ({ value }) => {
             style={stylesLogin.button}
             onClick={loginButton}
           >
-            Submit
+            CONTINUE
           </button>
         </div>
       </div>

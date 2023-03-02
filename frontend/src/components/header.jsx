@@ -1,14 +1,23 @@
 import Logo from "../assets/adidasLogo.png";
 import { Link } from "react-router-dom";
-import "../App.css";
+import { useEffect } from "react";
 import { useState } from "react";
 import Login from "./Login";
+import "../App.css";
+const Header = ({ value }) => {
+  const [userid, setUserId] = useState();
+  const [role, setRole] = useState();
 
-const Header = () => {
+  useEffect(() => {
+    setRole(localStorage.getItem("role"));
+    setUserId(localStorage.getItem("user_id"));
+  });
+
   const [displayLogin, setdisplayLogin] = useState({
     display: "none",
     isDisplay: false,
   });
+
   const loginPage = () => {
     if (displayLogin.isDisplay === false) {
       setdisplayLogin({ display: "inline", isDisplay: true });
