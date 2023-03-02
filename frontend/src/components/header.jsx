@@ -1,8 +1,7 @@
-import Logo from "../assets/adidasLogo.png";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import Login from "./Login";
+import Login from "./login";
 import "../App.css";
 const Header = ({ value }) => {
   const [userid, setUserId] = useState();
@@ -35,7 +34,7 @@ const Header = ({ value }) => {
       <div className="header">
         <div>
           <Link to={"/"}>
-            <img src={Logo} alt="" className="logo" />
+            <img alt="" className="logo" />
           </Link>
         </div>
 
