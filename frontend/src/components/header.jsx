@@ -31,7 +31,9 @@ const Header = () => {
         </div>
 
         <div className="mainHeader">
-          <div>MEN </div>
+          <Link to={"/Men"}>
+          MEN
+          </Link>
           <div>WOMEN </div>
           <div>KIDS </div>
           <div>SALE </div>

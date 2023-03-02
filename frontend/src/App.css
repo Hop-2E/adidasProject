@@ -59,6 +59,11 @@
     background-repeat: no-repeat;
     color: white;
 }
+.bodyButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .headerCards{
     display: flex;
     height:auto ;
@@ -72,4 +77,9 @@
 .text{
     display: flex;
     justify-content: space-between;
+}
+.newCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
