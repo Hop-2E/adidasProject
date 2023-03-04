@@ -32,8 +32,8 @@ const CreateItem = ({ value }) => {
     input: {
       width: "90%",
       height: "50px",
-      margin: "20px",
-      border: "0.5px solid grey",
+      border: "0.5px solid white",
+      margin: "10px",
     },
     button: {
       width: "90%",
@@ -81,6 +81,7 @@ const CreateItem = ({ value }) => {
   const priceRef = useRef();
   const colorRef = useRef();
   const typeRef = useRef();
+  const imageRef = useRef();
 
   const createButton = async () => {
     const res = await instance.post("/items", {
@@ -106,6 +107,7 @@ const CreateItem = ({ value }) => {
               className="input"
               style={styleCreate.input}
               ref={nameRef}
+              placeholder="name"
             />
           </div>
           <div className="inputContainer" style={styleCreate.miniContainer}>
@@ -114,6 +116,7 @@ const CreateItem = ({ value }) => {
               className="input"
               style={styleCreate.input}
               ref={priceRef}
+              placeholder="price"
             />
           </div>
           <div className="inputContainer" style={styleCreate.miniContainer}>
@@ -122,6 +125,7 @@ const CreateItem = ({ value }) => {
               className="input"
               style={styleCreate.input}
               ref={typeRef}
+              placeholder="type"
             />
           </div>
           <div className="inputContainer" style={styleCreate.miniContainer}>
@@ -130,6 +134,16 @@ const CreateItem = ({ value }) => {
               className="input"
               style={styleCreate.input}
               ref={colorRef}
+              placeholder="colors"
+            />
+          </div>
+          <div className="inputContainer" style={styleCreate.miniContainer}>
+            <input
+              type="text"
+              className="input"
+              style={styleCreate.input}
+              ref={imageRef}
+              placeholder="imageURL"
             />
           </div>
         </div>

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import Body from "../components/body";
+import BodyAdmin from "../components/bodyAdmin";
 import Header from "../components/header";
 const HomeLogged = () => {
-  const [userid, setUserId] = useState();
-  const [role, setRole] = useState();
   const [admin, setAdmin] = useState();
 
   useEffect(() => {
@@ -17,11 +16,12 @@ const HomeLogged = () => {
       setAdmin(false);
     }
   };
+
   console.log(admin);
   return (
     <div className="homeLogged">
       <Header />
-      {admin ? "dasf" : <Body />}
+      {admin ? <BodyAdmin /> : <Body />}
     </div>
   );
 };

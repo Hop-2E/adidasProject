@@ -151,7 +151,7 @@ const Header = () => {
                 </svg>
               </div>
             ) : (
-              "ss"
+              ""
             )}
           </div>
         </div>
