@@ -1,5 +1,5 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
 /*?Header*/
 
@@ -26,27 +26,26 @@
     width: 70px;
     margin-left: 30px;
 }
-.mainHeader{
-    display: flex ;
-    align-items:flex-end;
-    margin-bottom: 15px;
+.mainHeader {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
 }
 .mainHeader > div{
     margin-left: 15px;
     font-weight: bold;
 }
-.rightHeader{
-    display: flex;
-    flex-direction: column;
-   justify-content: flex-end;
-
+.rightHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.rightHeaderDiv{
-    display:flex ;
+.rightHeaderDiv {
+  display: flex;
 }
 .rightHeaderDiv > div {
-    margin-left: 10px;
-    margin: 10px;
+  margin-left: 10px;
+  margin: 10px;
 }
 
 /* Body */

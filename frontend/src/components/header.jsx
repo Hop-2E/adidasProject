@@ -1,7 +1,47 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+import Login from "./login";
 import "../App.css";
-
+import CreateItem from "./CreateItem";
 const Header = () => {
+  const [admin, setAdmin] = useState();
+  const [displayLogin, setdisplayLogin] = useState({
+    display: "none",
+    isDisplay: false,
+  });
+  const [createDisplay, setCreateDisplay] = useState({
+    display: "none",
+    isDisplay: false,
+  });
+
+  useEffect(() => {
+    checkAdmin();
+  }, []);
+
+  const checkAdmin = () => {
+    if (JSON.parse(localStorage.getItem("role")) === "admin") {
+      setAdmin(true);
+    } else {
+      setAdmin(false);
+    }
+  };
+
+  const loginPage = () => {
+    if (displayLogin.isDisplay === false) {
+      setdisplayLogin({ display: "inline", isDisplay: true });
+    } else {
+      setdisplayLogin({ display: "none", isDisplay: false });
+    }
+  };
+
+  const createItem = () => {
+    if (createDisplay.isDisplay === false) {
+      setCreateDisplay({ display: "inline", isDisplay: true });
+    } else {
+      setCreateDisplay({ display: "none", isDisplay: false });
+    }
+  };
   return (
     <>
       <div className="headerZero">
@@ -12,21 +52,7 @@ const Header = () => {
       <div className="header">
         <div>
           <Link to={"/"}>
-            <svg
-              className="logo"
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M50.0701 39.7718L31.9254 8.33325L22.2068 13.9395L37.112 39.7718H50.0701ZM32.7817 39.7719L20.7971 19.0254L11.0785 24.6317L19.8235 39.7719H32.7817ZM9.71859 29.7344L15.5095 39.7719H2.55134L0 35.3406L9.71859 29.7344Z"
-                fill="black"
-              />
-            </svg>
+            <img alt="" className="logo" />
           </Link>
         </div>
 
@@ -78,6 +104,7 @@ const Header = () => {
                 fill="currentColor"
                 class="bi bi-person"
                 viewBox="0 0 16 16"
+                onClick={loginPage}
               >
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
               </svg>
@@ -106,10 +133,61 @@ const Header = () => {
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
               </svg>
             </div>
+            {admin ? (
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-plus-lg"
+                  viewBox="0 0 16 16"
+                  onClick={createItem}
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                  />
+                </svg>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
+        <Login value={displayLogin.display} />
+        <CreateItem value={createDisplay.display} />
       </div>
     </>
   );
 };
 export default Header;
+const styles = {
+  headerZero: {
+    height: "40px",
+    width: "100vw",
+    backgroundColor: "black",
+    color: "white",
+    display: "flex",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    height: "80px",
+    width: "100vw",
+    justifyContent: "space-between",
+  },
+  logo: {
+    display: "flex",
+    flexdirection: "row",
+    height: "100px",
+    width: "140px",
+  },
+  mainHeader: {
+    display: "flex",
+    alignItems: "flex-end",
+    marginBottom: "15px",
+  },
+};
