@@ -1,7 +1,7 @@
 import "./App.css";
 import axios from "axios";
-import Header from "./components/header";
 import Home from "./pages/home";
+import Header from "./components/header";
 import Login from "./components/login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLogged from "./pages/HomeAdmin";

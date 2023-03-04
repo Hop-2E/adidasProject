@@ -103,11 +103,13 @@ const Login = ({ value }) => {
           username: emailRef.current.value,
           password: passRef.current.value,
         });
+
         navigate(`/${res.data.data._id}`);
         toast("successful");
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
+        window.location.reload();
       } catch (error) {
         console.log("LOGIN AJILLA");
         toast(error.response.data.error);
