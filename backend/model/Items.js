@@ -14,6 +14,9 @@ const ItemSchema = new mongoose.Schema({
   color: {
     type: Array,
   },
+  img: {
+    type: Array,
+  },
   user_id: {
     type: Schema.Types.ObjectId,
     ref: "user",
