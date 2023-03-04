@@ -89,7 +89,7 @@ const CreateItem = ({ value }) => {
       type: typeRef.current.value,
       price: priceRef.current.value,
       color: colorRef.current.value,
-      user_id: JSON.parse(localStorage.getItem("user_id")),
+      img: imageRef.current.value,
     });
     console.log(res);
   };
