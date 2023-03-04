@@ -90,6 +90,8 @@ const CreateItem = ({ value }) => {
       price: priceRef.current.value,
       color: colorRef.current.value,
       img: imageRef.current.value,
+      token: JSON.parse(localStorage.getItem("token")),
+      role: JSON.parse(localStorage.getItem("role")),
     });
     console.log(res);
   };

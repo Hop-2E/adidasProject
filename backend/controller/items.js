@@ -14,8 +14,16 @@ export const getAllItems = async (req, res) => {
   }
 };
 export const createItem = async (req, res) => {
+  const { name, type, price, color, img } = req.body;
   try {
-    const data = await Item.create(req.body);
+    const data = await Item.create({
+      name: name,
+      type: type,
+      color: color,
+      price: price,
+      img: img,
+    });
+
     res.status(200).send({
       success: true,
       data: data,

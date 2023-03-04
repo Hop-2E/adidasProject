@@ -12,7 +12,7 @@ const router = express.Router();
 router
   .route("/")
   .get(getAllItems)
-  .post(checkRole, createItem)
+  .post(checkTokenMiddleWare, checkRole, createItem)
   .delete(checkRole, deleteItem);
 router.route("/:id").put(checkTokenMiddleWare, uptadeItems);
 export default router;
