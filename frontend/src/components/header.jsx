@@ -3,25 +3,43 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Login from "./login";
 import "../App.css";
-const Header = ({ value }) => {
-  const [userid, setUserId] = useState();
-  const [role, setRole] = useState();
-
-  useEffect(() => {
-    setRole(localStorage.getItem("role"));
-    setUserId(localStorage.getItem("user_id"));
-  });
-
+import CreateItem from "./CreateItem";
+const Header = () => {
+  const [admin, setAdmin] = useState();
   const [displayLogin, setdisplayLogin] = useState({
     display: "none",
     isDisplay: false,
   });
+  const [createDisplay, setCreateDisplay] = useState({
+    display: "none",
+    isDisplay: false,
+  });
+
+  useEffect(() => {
+    checkAdmin();
+  }, []);
+
+  const checkAdmin = () => {
+    if (JSON.parse(localStorage.getItem("role")) === "admin") {
+      setAdmin(true);
+    } else {
+      setAdmin(false);
+    }
+  };
 
   const loginPage = () => {
     if (displayLogin.isDisplay === false) {
       setdisplayLogin({ display: "inline", isDisplay: true });
     } else {
       setdisplayLogin({ display: "none", isDisplay: false });
+    }
+  };
+
+  const createItem = () => {
+    if (createDisplay.isDisplay === false) {
+      setCreateDisplay({ display: "inline", isDisplay: true });
+    } else {
+      setCreateDisplay({ display: "none", isDisplay: false });
     }
   };
   return (
@@ -115,9 +133,30 @@ const Header = ({ value }) => {
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
               </svg>
             </div>
+            {admin ? (
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-plus-lg"
+                  viewBox="0 0 16 16"
+                  onClick={createItem}
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                  />
+                </svg>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <Login value={displayLogin.display} />
+        <CreateItem value={createDisplay.display} />
       </div>
     </>
   );
