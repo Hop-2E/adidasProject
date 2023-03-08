@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export const getAllUser = async (req, res) => {
   try {
-    const user = await User.find({});
+    const user = await User.find({}).populate("sags");
     res.status(200).send({
       success: true,
       data: user,
@@ -19,7 +19,7 @@ export const getAllUser = async (req, res) => {
 export const getUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id).populate("items");
+    const user = await User.findById(id).populate("items").populate("sags");
     res.status(200).send({
       success: true,
       data: user,
@@ -85,6 +85,20 @@ export const login = async (req, res) => {
         token: token,
       });
     }
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      data: error.message,
+    });
+  }
+};
+export const sags = async (req, res) => {
+  try {
+    const user = await User.findOne({ sags: "" });
+    res.status(200).send({
+      success: true,
+      data: user,
+    });
   } catch (error) {
     res.status(400).send({
       success: false,

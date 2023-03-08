@@ -27,6 +27,11 @@ UserSchema.virtual("items", {
   localField: "_id",
   foreignField: "user_id",
 });
+UserSchema.virtual("sags", {
+  ref: "item",
+  localField: "_id",
+  foreignField: "sags",
+});
 
 UserSchema.pre("save", async function (next) {
   try {
