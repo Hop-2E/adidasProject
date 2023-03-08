@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Login from "./login";
 import "../App.css";
 import CreateItem from "./CreateItem";
 const Header = () => {
+  const searchRef = useRef();
+  const navigate = useNavigate();
   const [admin, setAdmin] = useState();
   const [displayLogin, setdisplayLogin] = useState({
     display: "none",
@@ -42,6 +44,10 @@ const Header = () => {
       setCreateDisplay({ display: "none", isDisplay: false });
     }
   };
+
+  const searchButton = () => {
+    navigate(`./${searchRef.current.value}`);
+  };
   return (
     <>
       <div className="headerZero">
@@ -57,11 +63,11 @@ const Header = () => {
         </div>
 
         <div className="mainHeader">
-          <div>MEN </div>
-          <div>WOMEN </div>
-          <div>KIDS </div>
-          <div>SALE </div>
-          <div>3 SRTRIPE LIFE</div>
+          <div className="hovered">MEN </div>
+          <div className="hovered">WOMEN </div>
+          <div className="hovered">KIDS </div>
+          <div className="hovered">SALE </div>
+          <div className="hovered">3 SRTRIPE LIFE</div>
         </div>
         <div className="rightHeader">
           <div className="rightHeaderDiv">
@@ -80,10 +86,9 @@ const Header = () => {
             >
               <input
                 type="search"
-                name=""
-                id=""
                 placeholder="Search"
                 style={{ border: "none" }}
+                ref={searchRef}
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +97,7 @@ const Header = () => {
                 fill="currentColor"
                 class="bi bi-search"
                 viewBox="0 0 16 16"
+                onClick={searchButton}
               >
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
               </svg>
