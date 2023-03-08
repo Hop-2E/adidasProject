@@ -3,37 +3,37 @@
 }
 /*?Header*/
 
-.headerZero{
-    height: 40px;
-    width: 100vw;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
+.headerZero {
+  height: 40px;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.header{
-    display: flex;
-    flex-direction: row;
-    height: 80px;
-    width: 100vw;
-    justify-content: space-between;
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100vw;
+  justify-content: space-between;
 }
-.logo{
-    display: flex;
-    flex-direction: row;
-    height: 70px;
-    width: 70px;
-    margin-left: 30px;
+.logo {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  width: 70px;
+  margin-left: 30px;
 }
 .mainHeader {
   display: flex;
   align-items: flex-end;
   margin-bottom: 15px;
 }
-.mainHeader > div{
-    margin-left: 15px;
-    font-weight: bold;
+.mainHeader > div {
+  margin-left: 15px;
+  font-weight: bold;
 }
 .rightHeader {
   display: flex;
@@ -50,10 +50,14 @@
 
 /* Body */
 
-.Body{
-    height: calc(100vh);
-    background-size: contain;
-    width: 100vw;
-    background-image:url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
-    background-repeat: no-repeat;
+.Body {
+  height: calc(100vh);
+  background-size: contain;
+  width: 100vw;
+  background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
+  background-repeat: no-repeat;
+}
+.hovered:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 5px;
 }

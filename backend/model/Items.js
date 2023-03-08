@@ -20,7 +20,6 @@ const ItemSchema = new mongoose.Schema({
   user_id: {
     type: Schema.Types.ObjectId,
     ref: "user",
-    required: true,
   },
 });
 const Item = mongoose.model("item", ItemSchema);

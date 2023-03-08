@@ -96,6 +96,8 @@ const Login = ({ value }) => {
   const repassRef = useRef();
   const navigate = useNavigate();
 
+  console.log(switched);
+
   const loginButton = async () => {
     if (!switched) {
       try {
