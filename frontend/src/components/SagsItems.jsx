@@ -4,7 +4,7 @@ const SagsItems = ({ item }) => {
   const removeSags = async () => {
     const res = await instance.put(`items/${item._id}`, {
       token: JSON.parse(localStorage.getItem("token")),
-      sags: 123,
+      sags: [],
     });
   };
   return (

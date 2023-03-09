@@ -9,7 +9,7 @@ const Sags = () => {
     const res = await instance.get(
       `customers/${JSON.parse(localStorage.getItem("user_id"))}`
     );
-    setData(res.data.data.sags);
+    setData(res.data.data.sagsItem);
   };
   useEffect(() => {
     getData();

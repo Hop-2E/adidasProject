@@ -1,15 +1,29 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../App";
 import Header from "../components/header";
 
 const Item = () => {
   const { id } = useParams();
-  const sags = async () => {
-    const res = await instance.put(`items/${id}`, {
-      token: JSON.parse(localStorage.getItem("token")),
-      sags: JSON.parse(localStorage.getItem("user_id")),
-    });
+  const [data, setData] = useState();
+  console.log(id);
+  const getData = async () => {
+    const res = await instance.get(`items/${id}`);
+    setData(res.data.data._id);
   };
+  useEffect(() => {
+    getData();
+  }, []);
+  const sags = async () => {
+    const res = await instance.put(
+      `customers/${JSON.parse(localStorage.getItem("user_id"))}`,
+      {
+        data,
+      }
+    );
+  };
+
   return (
     <div>
       <Header />

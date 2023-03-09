@@ -18,6 +18,12 @@ const UserSchema = new mongoose.Schema(
       default: "normal",
       required: [true, "please specify user role"],
     },
+    sagsItem: {
+      type: Array,
+    },
+    wishlist: {
+      type: Array,
+    },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
@@ -26,11 +32,6 @@ UserSchema.virtual("items", {
   ref: "item",
   localField: "_id",
   foreignField: "user_id",
-});
-UserSchema.virtual("sags", {
-  ref: "item",
-  localField: "_id",
-  foreignField: "sags",
 });
 
 UserSchema.pre("save", async function (next) {

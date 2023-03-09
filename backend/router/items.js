@@ -4,6 +4,7 @@ import {
   createItem,
   deleteItem,
   uptadeItems,
+  getItem,
 } from "../controller/items.js";
 import { checkTokenMiddleWare } from "../middleware/middleware.js";
 import { checkRole } from "../middleware/role.js";
@@ -14,5 +15,5 @@ router
   .get(getAllItems)
   .post(checkTokenMiddleWare, checkRole, createItem)
   .delete(checkRole, deleteItem);
-router.route("/:id").put(checkTokenMiddleWare, uptadeItems);
+router.route("/:id").put(checkTokenMiddleWare, uptadeItems).get(getItem);
 export default router;
