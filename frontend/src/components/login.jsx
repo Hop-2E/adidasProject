@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { instance } from "../App";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 const Login = ({ value }) => {
   const [switched, setSwitched] = useState(false);
   const loginToSignup = () => {
@@ -13,6 +13,8 @@ const Login = ({ value }) => {
       setSwitched(true);
     }
   };
+
+  const navigate = useNavigate();
 
   const stylesLogin = {
     signup: {
@@ -24,14 +26,13 @@ const Login = ({ value }) => {
       top: 200,
       left: "35vw",
       border: "1px solid black",
-      zIndex: "1",
     },
     signupContainer: {
       width: "30vw",
       height: "600px",
       display: "flex",
       flexDirection: "column",
-      alignItems: "center",
+
       justifyContent: "center",
     },
     signupTitle: {
@@ -58,6 +59,7 @@ const Login = ({ value }) => {
       color: "white",
       font: "bold",
       fontSize: "21px",
+      fontWeight: "bold",
     },
     miniContainer: {
       width: "100%",
@@ -79,9 +81,10 @@ const Login = ({ value }) => {
       fontSize: "30px",
     },
     coolLaber: {
-      width: "90%",
+      width: "87%",
       height: "45px",
       marginTop: "20px",
+      paddingLeft: "10px",
     },
     signSwitch: {
       width: "90%",
@@ -90,12 +93,18 @@ const Login = ({ value }) => {
       marginTop: "10px",
       justifyContent: "center",
     },
+    signHelper: {
+      display: "flex",
+      justifyItems: "start",
+      flexDirection: "column",
+      marginLeft: "34px",
+      fontWeight: "bold",
+    },
   };
 
   const emailRef = useRef();
   const passRef = useRef();
   const repassRef = useRef();
-  const navigate = useNavigate();
 
   const loginButton = async () => {
     if (!switched) {
@@ -104,13 +113,12 @@ const Login = ({ value }) => {
           username: emailRef.current.value,
           password: passRef.current.value,
         });
-
-        navigate(`/${res.data.data._id}`);
         toast("successful");
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
-        window.location.reload();
+        alert("Succesfull");
+        navigate(`/${res.data.data._id}`);
       } catch (error) {
         console.log("LOGIN AJILLA");
         toast(error.response.data.error);
@@ -122,6 +130,7 @@ const Login = ({ value }) => {
             username: emailRef.current.value,
             password: passRef.current.value,
           });
+          alert("Succesfull");
         } catch (error) {
           console.log(emailRef, passRef);
           toast(error.response.data.error);
@@ -135,8 +144,11 @@ const Login = ({ value }) => {
   return (
     <div className="signup" style={stylesLogin.signup}>
       <div className="signupContainer" style={stylesLogin.signupContainer}>
-        <div className="signupTitle" style={stylesLogin.signTitle}>
-          LOG IN OR SIGN UP (IT'S FREE)
+        <div style={stylesLogin.signHelper}>
+          <div className="signupTitle" style={stylesLogin.signTitle}>
+            LOG IN OR SIGN UP (IT'S FREE)
+          </div>
+          <div>Enter your email to access or create your account</div>
         </div>
         <div className="inputContainer" style={stylesLogin.inputContainer}>
           <div className="emailContainer" style={stylesLogin.miniContainer}>

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Login from "./login";
+import Logo from "./Logo";
+import Login from "./Login";
 import "../App.css";
 import CreateItem from "./CreateItem";
 const Header = () => {
@@ -50,24 +51,51 @@ const Header = () => {
   };
   return (
     <>
-      <div className="headerZero">
-        <h4>GET A $20 BONUS REWARD</h4>
-        <h4>FREE STANDARD SHIPPING & RETURNS</h4>
-        <h4>FRESH SALE STYLES: UP TO 50% OFF</h4>
-      </div>
       <div className="header">
         <div>
           <Link to={"/"}>
-            <img alt="" className="logo" />
+            <Logo />
           </Link>
         </div>
 
         <div className="mainHeader">
-          <div className="hovered">MEN </div>
-          <div className="hovered">WOMEN </div>
-          <div className="hovered">KIDS </div>
-          <div className="hovered">SALE </div>
-          <div className="hovered">3 SRTRIPE LIFE</div>
+          <Link
+            style={{
+              marginRight: "10px",
+              textDecoration: "none",
+              color: "black",
+              fontWeight: "bolder",
+            }}
+            to="./Man"
+          >
+            {" "}
+            <div>MEN </div>
+          </Link>
+          <Link
+            style={{
+              marginRight: "10px",
+              textDecoration: "none",
+              color: "black",
+              fontWeight: "bolder",
+            }}
+            to="./Woman"
+          >
+            {" "}
+            <div>WOMAN </div>
+          </Link>
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "black",
+              fontWeight: "bolder",
+            }}
+            to="./Kids"
+          >
+            {" "}
+            <div>KIDS </div>
+          </Link>
+          <div>SALE </div>
+          <div>3 SRTRIPE LIFE</div>
         </div>
         <div className="rightHeader">
           <div className="rightHeaderDiv">
@@ -116,7 +144,7 @@ const Header = () => {
               </svg>
             </div>
             <div>
-              <Link to="./wishlist">
+              <Link to="./Wishlist">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

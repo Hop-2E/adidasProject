@@ -21,6 +21,9 @@ const ItemSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
+  size: {
+    type: Array,
+  },
   sags: {
     type: String,
     ref: "user",

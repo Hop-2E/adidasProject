@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import Body from "../components/body";
-import BodyAdmin from "../components/bodyAdmin";
-import Header from "../components/header";
+import Body from "../components/Body";
+import BodyAdmin from "../components/BodyAdmin";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import HeaderBlack from "../components/HeaderBlack";
 const HomeLogged = () => {
   const [admin, setAdmin] = useState();
 
@@ -20,8 +22,10 @@ const HomeLogged = () => {
   console.log(admin);
   return (
     <div className="homeLogged">
+      <HeaderBlack />
       <Header />
       {admin ? <BodyAdmin /> : <Body />}
+      <Footer />
     </div>
   );
 };

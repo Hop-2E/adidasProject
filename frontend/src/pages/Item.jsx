@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { instance } from "../App";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 const Item = () => {
   const { id } = useParams();

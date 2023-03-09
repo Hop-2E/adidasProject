@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../App";
 import BodySearch from "../components/BodySearch";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 const Search = () => {
   const [data, setData] = useState();
