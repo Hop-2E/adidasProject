@@ -17,12 +17,11 @@ const ItemSchema = new mongoose.Schema({
   img: {
     type: String,
   },
+  storage: {
+    type: Number,
+  },
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: "user",
-  },
-  sags: {
-    type: String,
     ref: "user",
   },
 });

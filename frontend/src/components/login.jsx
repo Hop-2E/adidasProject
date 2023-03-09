@@ -3,7 +3,6 @@ import { instance } from "../App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 const Login = ({ value }) => {
   const [switched, setSwitched] = useState(false);
   const loginToSignup = () => {
@@ -24,7 +23,6 @@ const Login = ({ value }) => {
       top: 200,
       left: "35vw",
       border: "1px solid black",
-      zIndex: "1",
     },
     signupContainer: {
       width: "30vw",
@@ -95,7 +93,6 @@ const Login = ({ value }) => {
   const emailRef = useRef();
   const passRef = useRef();
   const repassRef = useRef();
-  const navigate = useNavigate();
 
   const loginButton = async () => {
     if (!switched) {
@@ -104,8 +101,6 @@ const Login = ({ value }) => {
           username: emailRef.current.value,
           password: passRef.current.value,
         });
-
-        navigate(`/${res.data.data._id}`);
         toast("successful");
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));

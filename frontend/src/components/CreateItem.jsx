@@ -82,6 +82,7 @@ const CreateItem = ({ value }) => {
   const colorRef = useRef();
   const typeRef = useRef();
   const imageRef = useRef();
+  const storageRef = useRef();
 
   const createButton = async () => {
     const res = await instance.post("/items", {
@@ -146,6 +147,15 @@ const CreateItem = ({ value }) => {
               style={styleCreate.input}
               ref={imageRef}
               placeholder="imageURL"
+            />
+          </div>
+          <div className="inputContainer" style={styleCreate.miniContainer}>
+            <input
+              type="text"
+              className="input"
+              style={styleCreate.input}
+              ref={storageRef}
+              placeholder="storage"
             />
           </div>
         </div>

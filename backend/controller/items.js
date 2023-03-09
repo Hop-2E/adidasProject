@@ -13,6 +13,21 @@ export const getAllItems = async (req, res) => {
     });
   }
 };
+export const getItem = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await Item.findById({ _id: id });
+    res.status(200).send({
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      data: error.message,
+    });
+  }
+};
 export const createItem = async (req, res) => {
   const { name, type, price, color, img } = req.body;
   try {

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export const getAllUser = async (req, res) => {
   try {
-    const user = await User.find({}).populate("sags");
+    const user = await User.find({});
     res.status(200).send({
       success: true,
       data: user,
@@ -19,7 +19,7 @@ export const getAllUser = async (req, res) => {
 export const getUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id).populate("items").populate("sags");
+    const user = await User.findById(id);
     res.status(200).send({
       success: true,
       data: user,
@@ -92,9 +92,40 @@ export const login = async (req, res) => {
     });
   }
 };
+
 export const sags = async (req, res) => {
+  const { id } = req.params;
   try {
-    const user = await User.findOne({ sags: "" });
+    const user = await User.findByIdAndUpdate(
+      { _id: id },
+      {
+        $push: {
+          sagsItem: req.body,
+        },
+      }
+    );
+    res.status(200).send({
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      data: error.message,
+    });
+  }
+};
+export const wishlist = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findByIdAndUpdate(
+      { _id: id },
+      {
+        $push: {
+          wishlist: req.body,
+        },
+      }
+    );
     res.status(200).send({
       success: true,
       data: user,
