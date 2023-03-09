@@ -14,8 +14,6 @@ const Login = ({ value }) => {
     }
   };
 
-  const navigate = useNavigate();
-
   const stylesLogin = {
     signup: {
       width: "30vw",
@@ -32,7 +30,6 @@ const Login = ({ value }) => {
       height: "600px",
       display: "flex",
       flexDirection: "column",
-
       justifyContent: "center",
     },
     signupTitle: {
@@ -59,7 +56,6 @@ const Login = ({ value }) => {
       color: "white",
       font: "bold",
       fontSize: "21px",
-      fontWeight: "bold",
     },
     miniContainer: {
       width: "100%",
@@ -81,10 +77,9 @@ const Login = ({ value }) => {
       fontSize: "30px",
     },
     coolLaber: {
-      width: "87%",
+      width: "90%",
       height: "45px",
       marginTop: "20px",
-      paddingLeft: "10px",
     },
     signSwitch: {
       width: "90%",
@@ -92,13 +87,6 @@ const Login = ({ value }) => {
       display: "flex",
       marginTop: "10px",
       justifyContent: "center",
-    },
-    signHelper: {
-      display: "flex",
-      justifyItems: "start",
-      flexDirection: "column",
-      marginLeft: "34px",
-      fontWeight: "bold",
     },
   };
 
@@ -117,8 +105,7 @@ const Login = ({ value }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
-        alert("Succesfull");
-        navigate(`/${res.data.data._id}`);
+        window.location.reload();
       } catch (error) {
         console.log("LOGIN AJILLA");
         toast(error.response.data.error);
@@ -130,7 +117,6 @@ const Login = ({ value }) => {
             username: emailRef.current.value,
             password: passRef.current.value,
           });
-          alert("Succesfull");
         } catch (error) {
           console.log(emailRef, passRef);
           toast(error.response.data.error);
@@ -144,11 +130,8 @@ const Login = ({ value }) => {
   return (
     <div className="signup" style={stylesLogin.signup}>
       <div className="signupContainer" style={stylesLogin.signupContainer}>
-        <div style={stylesLogin.signHelper}>
-          <div className="signupTitle" style={stylesLogin.signTitle}>
-            LOG IN OR SIGN UP (IT'S FREE)
-          </div>
-          <div>Enter your email to access or create your account</div>
+        <div className="signupTitle" style={stylesLogin.signTitle}>
+          LOG IN OR SIGN UP (IT'S FREE)
         </div>
         <div className="inputContainer" style={stylesLogin.inputContainer}>
           <div className="emailContainer" style={stylesLogin.miniContainer}>
