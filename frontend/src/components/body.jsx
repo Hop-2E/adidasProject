@@ -1,28 +1,19 @@
+import React from "react";
+import BodyImg from "./BodyImg";
+import BodyNavbar from "./BodyNavbar";
+import BodyItems from "./BodyItems";
+
 const Body = () => {
   return (
-    <>
-      <div>
-        <div className="Body"></div>
-        <div className="cards">
-          <div>
-            <img src="" alt="" />
-            <a href=""></a>
-          </div>
-          <div>text</div>
-          <div>
-            <img src="" alt="" />
-            <div></div>
-            <div></div>
-            <p></p>
-          </div>
-        </div>
-        <div className="news">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+    <div
+      style={{ width: "100vw", height: "4000px", border: "1px solid black" }}
+    >
+      <BodyImg />
+
+      <div style={{ marginTop: "40px" }}>
+        <BodyNavbar />
       </div>
-    </>
+    </div>
   );
 };
 

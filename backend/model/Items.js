@@ -21,6 +21,10 @@ const ItemSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
+  sags: {
+    type: String,
+    ref: "user",
+  },
 });
 const Item = mongoose.model("item", ItemSchema);
 export default Item;
