@@ -23,6 +23,7 @@
   flex-direction: row;
   height: 80px;
   width: 100px;
+  margin: "2222222"
 }
 .mainHeader{
   display: flex ;
