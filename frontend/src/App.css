@@ -48,7 +48,7 @@
   margin: 10px;
 }
 
-/* Body */
+/*! body */
 
 .Body{
     height: calc(100vh);
@@ -56,4 +56,49 @@
     width: 100vw;
     background-image:url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
     background-repeat: no-repeat;
+}
+
+/*? profile */
+
+.profile{
+  height: 100vh;
+  width: 15vw;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  z-index: 118;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 0;
+}
+.profileHeader{
+  background-color: beige;
+
+}
+.profileButton{
+  background-color: black;
+  color: white;
+}
+.profileSale{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #0081c7;
+  border-radius: 5px;
+  color: #ffff;
+  padding: 20px;
+  height: 90px;
+}
+.profileComplete{
+  height: 7% ;
+  background-color: blanchedalmond;
+}
+.profileShop{
+  height: 7% ;
+  background-color: burlywood;
+}
+.profileFooter{
+  background-color: coral;
 }
