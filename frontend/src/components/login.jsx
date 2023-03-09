@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { instance } from "../App";
-import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -30,6 +29,7 @@ const Login = ({ value }) => {
       height: "600px",
       display: "flex",
       flexDirection: "column",
+      alignItems: "center",
       justifyContent: "center",
     },
     signupTitle: {
