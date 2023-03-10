@@ -14,5 +14,5 @@ router
   .get(getAllItems)
   .post(checkTokenMiddleWare, checkRole, createItem)
   .delete(checkRole, deleteItem);
-router.route("/:id").put(x, uptadeItems);
+router.route("/:id").put(checkTokenMiddleWare, uptadeItems);
 export default router;
