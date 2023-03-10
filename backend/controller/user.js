@@ -115,6 +115,29 @@ export const sags = async (req, res) => {
     });
   }
 };
+export const removeSags = async (req, res) => {
+  const { id } = req.params;
+  console.log(req.body);
+  try {
+    const user = await User.findByIdAndUpdate(
+      { _id: id },
+      {
+        $pull: {
+          sagsItem: req.body,
+        },
+      }
+    );
+    res.status(200).send({
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      data: error.message,
+    });
+  }
+};
 export const wishlist = async (req, res) => {
   const { id } = req.params;
   try {
@@ -122,6 +145,29 @@ export const wishlist = async (req, res) => {
       { _id: id },
       {
         $push: {
+          wishlist: req.body,
+        },
+      }
+    );
+    res.status(200).send({
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      data: error.message,
+    });
+  }
+};
+export const removeWishlist = async (req, res) => {
+  const { id } = req.params;
+  console.log(req.body);
+  try {
+    const user = await User.findByIdAndUpdate(
+      { _id: id },
+      {
+        $pull: {
           wishlist: req.body,
         },
       }

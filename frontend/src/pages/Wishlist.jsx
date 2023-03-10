@@ -21,11 +21,11 @@ function WishList() {
       <Header />
       <div style={WishListStyle.text}>
         <div style={WishListStyle.title}>MY WISHLIST</div>
-        <div style={WishListStyle.item}>0 ITEMS</div>
+        <div style={WishListStyle.item}>{data.length} ITEMS</div>
         <div style={WishListStyle.items}>
           {data &&
             data.map((values) => {
-              return <WishListItem values={values} />;
+              return <WishListItem values={values.value} />;
             })}
         </div>
       </div>
