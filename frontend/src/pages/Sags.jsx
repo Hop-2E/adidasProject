@@ -20,7 +20,7 @@ const Sags = () => {
       <div>
         {data &&
           data.map((item) => {
-            return <SagsItems item={item} />;
+            return <SagsItems item={item.data} />;
           })}
       </div>
     </div>

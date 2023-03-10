@@ -1,21 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { instance } from "../App";
+import Accept from "./Accept";
 
 const SagsRequests = ({ sags, username }) => {
   return (
     <div style={stylesOfSags.bigContainer}>
       <div style={stylesOfSags.title}>{username}</div>
       <div style={stylesOfSags.miniContainer}>
-        {sags &&
+        {sags.length !== 0 &&
           sags.map((el) => {
-            return (
-              <div style={stylesOfSags.sagsContainer}>
-                <img src={el.img} alt="" style={stylesOfSags.img} />
-                <div>{el.name}</div>
-                <div>{el.price}</div>
-              </div>
-            );
+            return <Accept accept={el.data} />;
           })}
-        <button style={stylesOfSags.button}>accept</button>
       </div>
     </div>
   );
@@ -39,7 +34,7 @@ const stylesOfSags = {
   },
   button: {
     width: "100px",
-    height: "40px",
+    height: "30px",
   },
   bigContainer: {
     border: "0.5px solid grey",

@@ -20,6 +20,11 @@ const ItemSchema = new mongoose.Schema({
   storage: {
     type: Number,
   },
+  accept: {
+    type: Boolean,
+    enum: [false, true],
+    default: false,
+  },
   user_id: {
     type: Schema.Types.ObjectId,
     ref: "user",

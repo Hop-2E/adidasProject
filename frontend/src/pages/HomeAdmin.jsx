@@ -16,8 +16,6 @@ const HomeLogged = () => {
       setAdmin(false);
     }
   };
-
-  console.log(admin);
   return (
     <div className="homeLogged">
       <Header />
