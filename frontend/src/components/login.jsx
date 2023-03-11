@@ -108,7 +108,6 @@ const Login = ({ value }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
-        alert("succesfull");
         navigates(`/${res.data.data._id}`);
         window.location.reload();
       } catch (error) {

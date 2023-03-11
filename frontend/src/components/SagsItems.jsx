@@ -1,5 +1,6 @@
 import { instance } from "../App";
 import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const SagsItems = ({ item }) => {
   const [data, setData] = useState();
@@ -20,12 +21,19 @@ const SagsItems = ({ item }) => {
         data: item,
       }
     );
+    const items = await instance.put(`items/${item}`, {
+      token: JSON.parse(localStorage.getItem("token")),
+      accept: false,
+    });
   };
 
   return (
     <div>
       {data && (
-        <div className="sagsMiniContainer" style={miniSagsStyles.container}>
+        <div
+          className="sagsMiniContainer navbarMain"
+          style={miniSagsStyles.container}
+        >
           <div className="imgOfsags">
             <img src={data.img} alt="img" style={miniSagsStyles.img} />
           </div>
@@ -49,6 +57,16 @@ const SagsItems = ({ item }) => {
             </div>
             <div className="priceOfsags">{data.price}</div>
             <div className="colorOfsags">{data.color}</div>
+            <div style={miniSagsStyles.accept}>
+              {data.accept ? (
+                "accepted"
+              ) : (
+                <div>
+                  <div class="spinner-border" role="status"></div> waiting for
+                  admin permission
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -58,7 +76,9 @@ const SagsItems = ({ item }) => {
 export default SagsItems;
 const miniSagsStyles = {
   helper: {
+    width: "100%",
     display: "flex",
+    justifyContent: "space-between ",
   },
   container: {
     display: "flex",
@@ -72,15 +92,20 @@ const miniSagsStyles = {
   },
   img: {
     width: "240px",
-    height: "240px",
+    height: "230px",
   },
   content: {
     display: "flex",
     padding: "20px",
     flexDirection: "column",
+    width: "70%",
   },
   icon: {
-    position: "absolute",
-    marginLeft: "19.75vw",
+    position: "relative",
+    right: "0px ",
+  },
+  accept: {
+    color: "grey",
+    marginTop: "70px",
   },
 };

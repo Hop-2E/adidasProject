@@ -1,17 +1,17 @@
 import "./App.css";
 import axios from "axios";
 import Home from "./pages/home";
-import Header from "./Components/header";
-import Login from "./Components/login";
+import Header from "./components/header";
+import Login from "./components/login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLogged from "./pages/HomeAdmin";
 import Search from "./pages/Search";
 import WishList from "./pages/Wishlist";
 import Item from "./pages/Item";
 import Sags from "./pages/Sags";
-import MensShoes from "./Components/mensShoes";
-import WomenShoes from "./Components/WomenShoes";
-import KidsShoes from "./Components/KidsShoes";
+import MensShoes from "./components/mensShoes";
+import WomenShoes from "./components/WomenShoes";
+import KidsShoes from "./components/KidsShoes";
 export const instance = axios.create({
   baseURL: "http://localhost:1234",
   headers: {

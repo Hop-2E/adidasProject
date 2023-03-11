@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { instance } from "../App";
 
-import FooterBlack from "../Components/FooterBlack";
-import Header from "../Components/header";
-import SagsItems from "../Components/SagsItems";
+import FooterBlack from "../components/FooterBlack";
+import Header from "../components/header";
+import SagsItems from "../components/SagsItems";
 
 const Sags = () => {
   const style = {

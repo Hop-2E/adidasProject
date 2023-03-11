@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../Components/header";
-import WishListItem from "../Components/WishListItem";
+import Header from "../components/header";
+import WishListItem from "../components/WishListItem";
 import { useEffect } from "react";
 import { useState } from "react";
 import { instance } from "../App";
-import FooterBlack from "../Components/FooterBlack";
+import FooterBlack from "../components/FooterBlack";
 function WishList() {
   const [data, setData] = useState([]);
   const getWish = async () => {

@@ -1,8 +1,8 @@
-import Body from "../Components/body";
-import FooterADS from "../Components/FooterADS";
-import FooterBlack from "../Components/FooterBlack";
-import FooterNavbar from "../Components/FooterNavbar";
-import Header from "../Components/header";
+import Body from "../components/body";
+import FooterADS from "../components/FooterADS";
+import FooterBlack from "../components/FooterBlack";
+import FooterNavbar from "../components/FooterNavbar";
+import Header from "../components/header";
 
 const Home = () => {
   return (

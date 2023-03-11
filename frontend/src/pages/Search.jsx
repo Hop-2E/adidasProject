@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { instance } from "../App";
 import Arrow from "../assets/arrow.png";
-import BodySearch from "../Components/BodySearch";
-import Header from "../Components/header";
-import FooterBlack from "../Components/FooterBlack";
+import BodySearch from "../components/BodySearch";
+import Header from "../components/header";
+import FooterBlack from "../components/FooterBlack";
 const Search = () => {
   const styles = {
     back: {

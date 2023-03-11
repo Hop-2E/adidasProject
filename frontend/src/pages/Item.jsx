@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../App";
-import Header from "../Components/header";
+import Header from "../components/header";
 
 const Item = () => {
   const { id } = useParams();
