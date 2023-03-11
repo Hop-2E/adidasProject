@@ -11,9 +11,18 @@ const Body = () => {
       style={{ width: "100vw", height: "4000px", border: "1px solid black" }}
     >
       <BodyImg />
-      <div style={{ marginTop: "40px", marginBottom: "40px" }}>
+      <div
+        style={{
+          marginTop: "40px",
+          marginBottom: "40px",
+        }}
+      >
         <BodyTitle />
-        <BodyNavbar />
+        <div
+          style={{ width: "100vw", display: "flex", justifyContent: "center" }}
+        >
+          <BodyNavbar />
+        </div>
       </div>
       <div>
         <Collection />
