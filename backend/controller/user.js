@@ -117,7 +117,7 @@ export const sags = async (req, res) => {
 };
 export const removeSags = async (req, res) => {
   const { id } = req.params;
-  console.log(req.body);
+
   try {
     const user = await User.findByIdAndUpdate(
       { _id: id },
@@ -127,6 +127,7 @@ export const removeSags = async (req, res) => {
         },
       }
     );
+    console.log(user.sagsItem);
     res.status(200).send({
       success: true,
       data: user,
