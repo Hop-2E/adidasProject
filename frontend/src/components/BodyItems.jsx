@@ -11,6 +11,7 @@ function BodyItems({ value }) {
       width: "278px",
       height: "370px",
       borderRadius: "10px",
+      zIndex: "0",
     },
     navbarContainer: {
       display: "flex",

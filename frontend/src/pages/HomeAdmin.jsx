@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import Body from "../components/body";
 import BodyAdmin from "../components/bodyAdmin";
 import Header from "../components/header";
+import FooterADS from "../components/FooterADS";
+import FooterBlack from "../components/FooterBlack";
+import FooterNavbar from "../components/FooterNavbar";
+import FooterText from "../components/FooterText";
 const HomeLogged = () => {
   const [admin, setAdmin] = useState();
 
@@ -20,6 +24,10 @@ const HomeLogged = () => {
     <div className="homeLogged">
       <Header />
       {admin ? <BodyAdmin /> : <Body />}
+      <FooterText />
+      <FooterADS />
+      <FooterNavbar />
+      <FooterBlack />
     </div>
   );
 };

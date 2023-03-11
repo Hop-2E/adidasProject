@@ -116,3 +116,6 @@ a:active {
   border: 1px solid grey;
   box-shadow: 5px 5px 0px 0px rgb(182, 180, 180);
 } */
+.height{
+  min-height: 80vh;
+}
