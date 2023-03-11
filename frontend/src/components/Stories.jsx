@@ -47,7 +47,7 @@ function Stories() {
         <div style={style.Container}>
           <img
             style={style.image}
-            src="https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enUS/Images/2021/11/forum-size-guide-masthead-d_221-807066.jpg"
+            src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_800,w_800/enUS/Images/running-ss23-4dfwd-ccm-launch-hp-teaser-carousel-dg-d_tcm221-998876.jpg"
             alt=""
           />
           <div style={style.desp}>THE DEFINITIVE ADIDAS FORUM SIZE GUIDE</div>

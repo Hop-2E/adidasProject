@@ -56,12 +56,16 @@
     display: flex;
     align-content: center;
     justify-content: center;
+
   }
   
   .sda {
     font-size: 14px;
     font-weight: bold;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .footerColumn {
