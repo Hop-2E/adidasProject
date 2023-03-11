@@ -2,7 +2,7 @@ import "./App.css";
 import axios from "axios";
 import Home from "./pages/home";
 import Header from "./Components/header";
-import Login from "./Components/login";
+import Login from "./Components/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLogged from "./pages/HomeAdmin";
 import Search from "./pages/Search";

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Login from "./login";
+import Login from "./Login";
 import Logo from "./Logo";
 import "../App.css";
 import CreateItem from "./CreateItem";
