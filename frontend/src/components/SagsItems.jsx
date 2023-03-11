@@ -29,23 +29,26 @@ const SagsItems = ({ item }) => {
           <div className="imgOfsags">
             <img src={data.img} alt="img" style={miniSagsStyles.img} />
           </div>
-          <div className="contentOfsags" style={miniSagsStyles.content}>
-            <div className="iconOfsags" style={miniSagsStyles.icon}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-x-lg"
-                viewBox="0 0 16 16"
-                onClick={removeSags}
-              >
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-              </svg>
+          <div style={miniSagsStyles.content}>
+            <div style={miniSagsStyles.helper}>
+              <div className="nameOfsags">{data.name}</div>
+              <div style={miniSagsStyles.icon}>
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                  onClick={removeSags}
+                >
+                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                </svg>{" "}
+              </div>
             </div>
-            <div className="nameOfsags">{data.name}</div>
-            <div className="colorOfsags">{data.color}</div>
             <div className="priceOfsags">{data.price}</div>
+            <div className="colorOfsags">{data.color}</div>
           </div>
         </div>
       )}
@@ -54,28 +57,30 @@ const SagsItems = ({ item }) => {
 };
 export default SagsItems;
 const miniSagsStyles = {
+  helper: {
+    display: "flex",
+  },
   container: {
     display: "flex",
     flexDirection: "row",
-    width: "500px",
+    width: "700px",
     height: "240px",
     border: "1px solid grey",
     fontSize: "20px",
-    margin: "50px",
+    marginLeft: "20vw",
+    marginTop: "4vh",
   },
   img: {
     width: "240px",
     height: "240px",
   },
   content: {
-    width: "260px",
     display: "flex",
     padding: "20px",
     flexDirection: "column",
   },
   icon: {
-    width: "220px",
-    display: "flex",
-    justifyContent: "end",
+    position: "absolute",
+    marginLeft: "19.75vw",
   },
 };

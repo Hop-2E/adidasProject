@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/header";
-import WishListItem from "../components/WishListItem";
+import Header from "../Components/header";
+import WishListItem from "../Components/WishListItem";
 import { useEffect } from "react";
 import { useState } from "react";
 import { instance } from "../App";

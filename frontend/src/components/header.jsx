@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./login";
+import Logo from "./Logo";
 import "../App.css";
 import CreateItem from "./CreateItem";
 const Header = () => {
@@ -58,7 +59,7 @@ const Header = () => {
       <div className="header">
         <div>
           <Link to={"/"}>
-            <img alt="" className="logo" />
+            <Logo />
           </Link>
         </div>
 
