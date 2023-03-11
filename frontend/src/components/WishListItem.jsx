@@ -14,8 +14,8 @@ function WishListItem({ values }) {
   };
   return (
     <div className="navbarMain" style={navbarStyle.navbarMain}>
-      <div style={navbarStyle.navbarHelper}>
-        <img style={{ width: 278, height: 278 }} src={values.img} alt="" />
+      <div style={navbarStyle.navbarHelper} className="navbarHelper">
+        <img src={values.img} alt="" className="imageOfItem" />
         <div style={navbarStyle.navbarPrice}>{values.price}$</div>
       </div>
       <div style={navbarStyle.navbarContainer}>
@@ -44,9 +44,10 @@ function WishListItem({ values }) {
 export default WishListItem;
 const navbarStyle = {
   navbarMain: {
-    marginRight: "30px",
+    margin: "20px",
     width: "278px",
-    height: "400px",
+    height: "370px",
+    borderRadius: "10px",
   },
   navbarContainer: {
     display: "flex",
@@ -63,7 +64,7 @@ const navbarStyle = {
   },
   navbarPrice: {
     position: "absolute",
-    marginTop: "-25px",
+    marginTop: "-50px",
     marginLeft: "5px",
     backgroundColor: "white",
   },

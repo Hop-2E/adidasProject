@@ -18,7 +18,8 @@ const Item = () => {
     const res = await instance.put(
       `customers/sags/${JSON.parse(localStorage.getItem("user_id"))}`,
       {
-        data,
+        data: data,
+        accept: false,
       }
     );
   };

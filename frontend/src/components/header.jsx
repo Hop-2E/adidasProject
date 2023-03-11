@@ -63,9 +63,15 @@ const Header = () => {
         </div>
 
         <div className="mainHeader">
-          <div className="hovered">MEN </div>
-          <div className="hovered">WOMEN </div>
-          <div className="hovered">KIDS </div>
+          <Link to="/men">
+            <div className="hovered">MEN </div>
+          </Link>
+          <Link to="/women">
+            <div className="hovered">WOMEN </div>
+          </Link>
+          <Link to="/kids">
+            <div className="hovered">KIDS </div>
+          </Link>
           <div className="hovered">SALE </div>
           <div className="hovered">3 SRTRIPE LIFE</div>
         </div>
@@ -116,7 +122,7 @@ const Header = () => {
               </svg>
             </div>
             <div>
-              <Link to="./wishlist">
+              <Link to="/wishlist">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -130,7 +136,7 @@ const Header = () => {
               </Link>
             </div>
             <div>
-              <Link to="./sags">
+              <Link to="/sags">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

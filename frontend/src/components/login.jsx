@@ -25,6 +25,7 @@ const Login = ({ value }) => {
       top: 200,
       left: "35vw",
       border: "1px solid black",
+      zIndex: "1",
     },
     signupContainer: {
       width: "30vw",

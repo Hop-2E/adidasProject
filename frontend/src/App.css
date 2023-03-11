@@ -50,30 +50,52 @@
 
 /* Body */
 
-.Body{
-    height: calc(100vh);
-    background-size: contain;
-    width: 100vw;
-    background-image:url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
-    background-repeat: no-repeat;
+.Body {
+  height: calc(100vh);
+  background-size: contain;
+  width: 100vw;
+  background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/bask-ss23-chapter2-hp-mh-large-launch_dual-gender-d_tcm221-994207.jpg");
+  background-repeat: no-repeat;
 }
 a:link {
-    color: gray;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:visited {
-    color: gray;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:hover {
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  a:active {
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
-  }
+  color: gray;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: gray;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.navbarMain {
+  border: 1px solid white;
+}
+.navbarMain:hover {
+  border: 1px solid grey;
+  box-shadow: 5px 5px 0px 0px rgb(182, 180, 180);
+}
+.imageOfItem {
+  width: 278px;
+  height: 278px;
+  border-radius: 10px;
+}
+.imageOfItem:hover {
+  width: 300px;
+  height: 300px;
+}
+.navbarHelper:hover {
+  width: 278px;
+  height: 278px;
+  border-radius: 10px;
+  overflow: hidden;
+}

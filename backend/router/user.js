@@ -19,5 +19,4 @@ routerUser.route("/sags/:id").put(sags);
 routerUser.route("/wishlist/:id").put(wishlist);
 routerUser.route("/removeSags/:id").put(removeSags);
 routerUser.route("/removeWishlist/:id").put(removeWishlist);
-
 export default routerUser;
