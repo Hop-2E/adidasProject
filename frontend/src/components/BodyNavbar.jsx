@@ -14,7 +14,16 @@ function BodyNavbar() {
     getData();
   }, [data]);
   return (
-    <div style={{ display: "flex", overflowX: "scroll" }}>
+    <div
+      style={{
+        display: "flex",
+        overflowX: "scroll",
+        width: "100vw",
+        height: "55vh",
+        alignItems: "center",
+        zIndex: "-1",
+      }}
+    >
       {data &&
         data.map((value) => {
           return <BodyItems value={value} />;

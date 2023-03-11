@@ -5,9 +5,10 @@ import { instance } from "../App";
 function BodyItems({ value }) {
   const navbarStyle = {
     navbarMain: {
-      marginLeft: "20px",
+      margin: "20px",
       width: "278px",
       height: "370px",
+      borderRadius: "10px",
     },
     navbarContainer: {
       display: "flex",
@@ -24,7 +25,7 @@ function BodyItems({ value }) {
     },
     navbarPrice: {
       position: "absolute",
-      marginTop: "-25px",
+      marginTop: "-50px",
       marginLeft: "5px",
       backgroundColor: "white",
     },
@@ -52,9 +53,9 @@ function BodyItems({ value }) {
   };
   return (
     <div className="navbarMain" style={navbarStyle.navbarMain}>
-      <div style={navbarStyle.navbarHelper}>
+      <div style={navbarStyle.navbarHelper} className="navbarHelper">
         <Link to={`./item/${value._id}`}>
-          <img style={{ width: 278, height: 278 }} src={value.img} alt="" />
+          <img src={value.img} alt="" className="imageOfItem" />
         </Link>
         <div style={navbarStyle.navbarPrice}>{value.price}$</div>
       </div>

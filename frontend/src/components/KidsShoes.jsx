@@ -2,7 +2,6 @@ import Header from "./header";
 import "../App.css";
 import Arrow from "../assets/arrow.png";
 import BottomArrow from "../assets/bottomArrow.png";
-import Shoes from "../assets/shoes.png";
 import { useDebugValue, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
@@ -65,7 +64,7 @@ const styles = {
   },
 };
 
-const MensShoes = () => {
+const KidsShoes = () => {
   const [data, setData] = useState();
   const [filtered, setFiltered] = useState();
   const getData = async () => {
@@ -74,7 +73,7 @@ const MensShoes = () => {
     setFiltered(
       data &&
         data.filter((el) => {
-          if (el.type[0] === "man") {
+          if (el.type[0] === "kids") {
             return el;
           }
         })
@@ -97,7 +96,7 @@ const MensShoes = () => {
         </Link>
       </p>
       <div style={styles.men}>
-        <p style={styles.menshoes}>MEN'S SHOES </p>
+        <p style={styles.menshoes}>KIDS SHOES </p>
         <p>
           Shop adidas for all styles of men's shoes including casual sneakers,
           high-performance running shoes, and <br />
@@ -142,4 +141,4 @@ const MensShoes = () => {
     </div>
   );
 };
-export default MensShoes;
+export default KidsShoes;

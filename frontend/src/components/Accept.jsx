@@ -18,7 +18,7 @@ const Accept = ({ accept }) => {
     if (!data.accept) {
       const res = await instance.put(`items/${accept}`, {
         token: JSON.parse(localStorage.getItem("token")),
-        storage: data.storage - 1,
+        storage: data.storage + 1,
         accept: true,
       });
     } else {
