@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { instance } from "../App";
-import BodySearch from "../Components/BodySearch";
-import Header from "../Components/header";
+import BodySearch from "../components/BodySearch";
+import Header from "../components/header";
 
 const Search = () => {
   const [data, setData] = useState();

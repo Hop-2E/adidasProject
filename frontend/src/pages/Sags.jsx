@@ -5,7 +5,6 @@ import FooterBlack from "../components/FooterBlack";
 import Header from "../components/header";
 import SagsItems from "../components/SagsItems";
 
-
 const Sags = () => {
   const style = {
     bill: {
@@ -63,6 +62,7 @@ const Sags = () => {
     },
     main: {
       display: "flex",
+      minHeight: "80vh",
     },
     helperMain: {
       marginLeft: "10vw",
@@ -146,13 +146,7 @@ const Sags = () => {
 
       <div style={{ marginTop: "5vh" }}>
         <FooterBlack />
-      <div className="height">
-        {data &&
-          data.map((item) => {
-            return <SagsItems item={item.data} />;
-          })}
       </div>
-      <FooterBlack />
     </div>
   );
 };
