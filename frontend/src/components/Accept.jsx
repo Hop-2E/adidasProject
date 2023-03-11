@@ -18,7 +18,7 @@ const Accept = ({ accept }) => {
     if (!data.accept) {
       const res = await instance.put(`items/${accept}`, {
         token: JSON.parse(localStorage.getItem("token")),
-        storage: data.storage + 1,
+        storage: data.storage - 1,
         accept: true,
       });
     } else {
@@ -62,6 +62,9 @@ const stylesOfSags = {
   button: {
     width: "100px",
     height: "30px",
+    backgroundColor: "#363738",
+    color: "white",
+    borderRaduis: "10px",
   },
   bigContainer: {
     border: "0.5px solid grey",

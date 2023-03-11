@@ -24,9 +24,9 @@ const HomeLogged = () => {
     <div className="homeLogged">
       <Header />
       {admin ? <BodyAdmin /> : <Body />}
-      <FooterText />
-      <FooterADS />
-      <FooterNavbar />
+      {admin ? "" : <FooterADS />}
+      {admin ? "" : <FooterText />}
+      {admin ? "" : <FooterNavbar />}
       <FooterBlack />
     </div>
   );

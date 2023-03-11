@@ -34,5 +34,6 @@ const styleSags = {
   },
   miniContainer: {
     width: "70vw",
+    minHeight: "80vh",
   },
 };
