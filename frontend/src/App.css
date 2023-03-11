@@ -15,9 +15,11 @@
 .header {
   display: flex;
   flex-direction: row;
+  background-color: white;
   height: 80px;
   width: 100vw;
   justify-content: space-between;
+
 }
 .logo {
   display: flex;
@@ -30,6 +32,7 @@
   display: flex;
   align-items: flex-end;
   margin-bottom: 15px;
+  column-gap: 10px;
 }
 .mainHeader > div {
   margin-left: 15px;
@@ -46,6 +49,13 @@
 .rightHeaderDiv > div {
   margin-left: 10px;
   margin: 10px;
+}
+.hovered{
+  font-size: 20px;
+  font-weight: 800;
+}
+.hovered:visited{
+  color: black
 }
 
 /* Body */
@@ -99,3 +109,10 @@ a:active {
   border-radius: 10px;
   overflow: hidden;
 }
+/* .collectionMain{
+  border: 1px solid white;
+}
+.collectionMain:hover{
+  border: 1px solid grey;
+  box-shadow: 5px 5px 0px 0px rgb(182, 180, 180);
+} */

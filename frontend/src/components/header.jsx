@@ -72,8 +72,12 @@ const Header = () => {
           <Link to="/kids">
             <div className="hovered">KIDS </div>
           </Link>
-          <div className="hovered">SALE </div>
-          <div className="hovered">3 SRTRIPE LIFE</div>
+          <Link>
+            <div className="hovered">SALE </div>
+          </Link>
+          <Link>
+            <div className="hovered">3 SRTRIPE LIFE</div>
+          </Link>
         </div>
         <div className="rightHeader">
           <div className="rightHeaderDiv">
