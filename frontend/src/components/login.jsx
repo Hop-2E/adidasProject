@@ -3,10 +3,8 @@ import { instance } from "../App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 const Login = ({ value }) => {
   const [switched, setSwitched] = useState(false);
-  const navigate = useNavigate();
   const loginToSignup = () => {
     if (switched) {
       setSwitched(false);
@@ -108,7 +106,6 @@ const Login = ({ value }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
-        navigate(`/${res.data.data._id}`);
         window.location.reload();
       } catch (error) {
         console.log("LOGIN AJILLA");

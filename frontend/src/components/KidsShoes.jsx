@@ -6,6 +6,8 @@ import { useDebugValue, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
 import BodyItems from "./BodyItems";
+import FooterBlack from "./FooterBlack";
+import FooterADS from "./FooterADS";
 
 const styles = {
   back: {
@@ -50,6 +52,7 @@ const styles = {
     display: "flex",
     alignItems: "baseline",
     gap: "10px",
+    minHeight: "200px",
   },
   button: {
     fontSize: "100%",
@@ -138,6 +141,7 @@ const KidsShoes = () => {
           </p>
         </p>
       </div>
+      <FooterBlack />
     </div>
   );
 };
