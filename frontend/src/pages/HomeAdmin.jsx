@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import Body from "../components/body";
-import BodyAdmin from "../components/bodyAdmin";
-import Header from "../components/header";
-import FooterADS from "../components/FooterADS";
-import FooterBlack from "../components/FooterBlack";
-import FooterNavbar from "../components/FooterNavbar";
-import FooterText from "../components/FooterText";
+import Body from "../Components/body";
+import BodyAdmin from "../Components/bodyAdmin";
+import Header from "../Components/header";
+import FooterADS from "../Components/FooterADS";
+import FooterBlack from "../Components/FooterBlack";
+import FooterNavbar from "../Components/FooterNavbar";
+import FooterText from "../Components/FooterText";
 const HomeLogged = () => {
   const [admin, setAdmin] = useState();
 

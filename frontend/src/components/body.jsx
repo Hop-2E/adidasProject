@@ -18,7 +18,6 @@ const Body = () => {
       <div
         style={{
           marginTop: "40px",
-          marginBottom: "40px",
         }}
       >
         <BodyTitle />

@@ -108,6 +108,7 @@ const Login = ({ value }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
+        alert("succesfull");
         navigates(`/${res.data.data._id}`);
         window.location.reload();
       } catch (error) {
@@ -121,6 +122,7 @@ const Login = ({ value }) => {
             username: emailRef.current.value,
             password: passRef.current.value,
           });
+          alert("succesfull");
         } catch (error) {
           console.log(emailRef, passRef);
           toast(error.response.data.error);
