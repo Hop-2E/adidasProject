@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Body from "../components/body";
-import BodyAdmin from "../components/bodyAdmin";
-import Header from "../components/header";
+import Body from "../Components/body";
+import BodyAdmin from "../Components/bodyAdmin";
+import Header from "../Components/header";
 const HomeLogged = () => {
   const [admin, setAdmin] = useState();
 
