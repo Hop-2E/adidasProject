@@ -16,6 +16,7 @@ const styles = {
   },
   menshoes: {
     fontSize: "150%",
+    fontWeight: "bolder",
   },
   mainType: {
     display: "flex",

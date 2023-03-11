@@ -92,6 +92,7 @@
   margin: 10px;
 }
 .hovered{
+  margin-left: 10px;
   font-size: 20px;
   font-weight: 800;
 }
