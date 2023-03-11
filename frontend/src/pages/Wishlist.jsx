@@ -4,6 +4,7 @@ import WishListItem from "../components/WishListItem";
 import { useEffect } from "react";
 import { useState } from "react";
 import { instance } from "../App";
+import FooterBlack from "../components/FooterBlack";
 function WishList() {
   const [data, setData] = useState([]);
   const getWish = async () => {
@@ -22,13 +23,14 @@ function WishList() {
       <div style={WishListStyle.text}>
         <div style={WishListStyle.title}>MY WISHLIST</div>
         <div style={WishListStyle.item}>{data.length} ITEMS</div>
-        <div style={WishListStyle.items}>
+        <div style={WishListStyle.items} className="height">
           {data &&
             data.map((values) => {
               return <WishListItem values={values.value} />;
             })}
         </div>
       </div>
+      <FooterBlack />
     </div>
   );
 }
