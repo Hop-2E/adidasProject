@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Header from "./components/header";
 import Login from "./components/login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createContext, useState } from "react";
 import HomeLogged from "./pages/HomeAdmin";
 import Search from "./pages/Search";
 import WishList from "./pages/Wishlist";
@@ -18,10 +19,16 @@ export const instance = axios.create({
     "Content-type": "application/json; charset=UTF-8",
   },
 });
-
+export const DarkMode = createContext();
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const styles = {
+    body: {
+      // backgroundColor: isDarkMode ? "white" : "grey",
+    },
+  };
   return (
-    <>
+    <DarkMode.Provider value={{ isDarkMode, setIsDarkMode }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -37,7 +44,7 @@ function App() {
           <Route path="/kids" element={<KidsShoes />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </DarkMode.Provider>
   );
 }
 

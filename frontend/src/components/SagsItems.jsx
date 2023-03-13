@@ -10,7 +10,7 @@ const SagsItems = ({ item }) => {
   }, [data]);
 
   const getData = async () => {
-    const res = await instance.get(`items/${item}`);
+    const res = await instance.get(`items/${item._id}`);
     setData(res.data.data);
   };
 
@@ -21,7 +21,7 @@ const SagsItems = ({ item }) => {
         data: item,
       }
     );
-    const items = await instance.put(`items/${item}`, {
+    const items = await instance.put(`items/${item._id}`, {
       token: JSON.parse(localStorage.getItem("token")),
       accept: false,
     });

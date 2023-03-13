@@ -1,12 +1,33 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import Carousel from "react-bootstrap/Carousel";
 const BodyImg = () => {
   return (
-    <div>
-      <img
-        style={{ width: "100vw" }}
-        src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/sportswear-SS23-global-launch-hp-masthead-primary-d_tcm221-984109.jpg"
-        alt=""
-      />
-    </div>
+    <Carousel>
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src="https://approval.studio/wp-content/uploads/elementor/thumbs/branding-story-of-adidas-phxr316ifopepwoi0z20kyaqn4g405p30ulyt2m8fk.jpg"
+          alt="First slide"
+        />
+        <Carousel.Caption></Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={500}>
+        <img
+          className="d-block w-100"
+          src="https://i.ytimg.com/vi/FwR2iVYfDV4/maxresdefault.jpg"
+          alt="Second slide"
+        />
+        <Carousel.Caption></Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/84589835172167.56ec20e07a472.png"
+          alt="Third slide"
+        />
+        <Carousel.Caption></Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 export default BodyImg;

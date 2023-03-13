@@ -50,54 +50,52 @@
   margin-left: 10px;
   margin: 10px;
 } */
-.header{
-  border: 1px solid #ECEFF1;
+.header {
+  border: 1px solid #eceff1;
   display: flex;
   flex-direction: row;
   height: 9vh;
   width: 100vw;
   justify-content: space-between;
-  
 }
-.logo{
+.logo {
   display: flex;
   flex-direction: row;
   height: 80px;
   width: 100px;
 }
-.mainHeader{
-  display: flex ;
-  align-items:flex-end;
+.mainHeader {
+  display: flex;
+  align-items: flex-end;
   margin-left: 250px;
   margin-bottom: 15px;
 }
-.mainHeader > div{
+.mainHeader > div {
   margin-left: 15px;
   font-weight: bolder;
   color: black;
 }
-.rightHeader{
+.rightHeader {
   display: flex;
   flex-direction: column;
- justify-content: flex-end;
-
+  justify-content: flex-end;
 }
-.rightHeaderDiv{
-  display:flex ;
-  font-size:13px;
+.rightHeaderDiv {
+  display: flex;
+  font-size: 13px;
   padding-right: 20px;
 }
 .rightHeaderDiv > div {
   margin-left: 10px;
   margin: 10px;
 }
-.hovered{
+.hovered {
   margin-left: 10px;
   font-size: 20px;
   font-weight: 800;
 }
-.hovered:visited{
-  color: black
+.hovered:visited {
+  color: black;
 }
 
 /* Body */
@@ -137,18 +135,12 @@ a:active {
   box-shadow: 5px 5px 0px 0px rgb(182, 180, 180);
 }
 .imageOfItem {
-  width: 278px;
-  height: 278px;
-  border-radius: 10px;
-}
-.imageOfItem:hover {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 .navbarHelper:hover {
-  width: 278px;
+  width: 290px;
   height: 278px;
-  border-radius: 10px;
   overflow: hidden;
 }
 .height {

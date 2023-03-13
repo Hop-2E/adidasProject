@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Accept = ({ accept }) => {
   const [data, setData] = useState();
   const getData = async () => {
-    const res = await instance.get(`items/${accept}`);
+    const res = await instance.get(`items/${accept._id}`);
     setData(res.data.data);
   };
 
@@ -16,7 +16,7 @@ const Accept = ({ accept }) => {
 
   const accepted = async () => {
     if (!data.accept) {
-      const res = await instance.put(`items/${accept}`, {
+      const res = await instance.put(`items/${accept._id}`, {
         token: JSON.parse(localStorage.getItem("token")),
         storage: data.storage - 1,
         accept: true,

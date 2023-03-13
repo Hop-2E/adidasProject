@@ -89,6 +89,15 @@ const Sags = () => {
   useEffect(() => {
     getData();
   }, [data]);
+  const order = async () => {
+    const res = await instance.put(
+      `/customers/${JSON.parse(localStorage.getItem("user_id"))}`,
+      {
+        order: { data },
+      }
+    );
+    console.log("asd");
+  };
   return (
     <div>
       <Header />
@@ -115,7 +124,9 @@ const Sags = () => {
           <div style={style.container}>
             <div style={style.checkout}>CHECKOUT</div>
             <div style={style.middle}>OR</div>
-            <div style={style.paypal}>PAYPAL</div>
+            <div style={style.paypal} onClick={order}>
+              PAYPAL
+            </div>
           </div>
           <div style={style.bill}>
             <div style={style.order}>ORDER SUMMARY</div>
