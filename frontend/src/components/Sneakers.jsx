@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { instance } from "../App";
 import BodyItems from "./BodyItems";
 import FooterBlack from "./FooterBlack";
-
 const styles = {
   back: {
     marginTop: "01%",
@@ -15,6 +14,7 @@ const styles = {
   },
   menshoes: {
     fontSize: "150%",
+    fontWeight: "bolder",
   },
   mainType: {
     display: "flex",
@@ -66,7 +66,7 @@ const styles = {
   },
 };
 
-const KidsShoes = () => {
+const Sneaker = () => {
   const [data, setData] = useState();
   const [filtered, setFiltered] = useState();
   const getData = async () => {
@@ -75,7 +75,7 @@ const KidsShoes = () => {
     setFiltered(
       data &&
         data.filter((el) => {
-          if (el.type[0] === "kids") {
+          if (el.typeOfClothes === "sneakers") {
             return el;
           }
         })
@@ -94,11 +94,11 @@ const KidsShoes = () => {
 
       <p style={styles.back}>
         <Link to={`/${JSON.parse(localStorage.getItem("user_id"))}`}>
-          <img src={Arrow} alt={Arrow} width="30" height="10" /> Back
+          <img src={Arrow} width="30" height="10" alt={Arrow} /> Back
         </Link>
       </p>
       <div style={styles.men}>
-        <p style={styles.menshoes}>KIDS SHOES </p>
+        <p style={styles.menshoes}>Sneakers</p>
         <p>
           Shop adidas for all styles of men's shoes including casual sneakers,
           high-performance running shoes, and <br />
@@ -149,4 +149,4 @@ const KidsShoes = () => {
     </div>
   );
 };
-export default KidsShoes;
+export default Sneaker;

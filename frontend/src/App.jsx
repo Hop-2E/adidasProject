@@ -1,4 +1,5 @@
 import "./App.css";
+import Pants from "./components/Pants";
 import axios from "axios";
 import Home from "./pages/home";
 import Header from "./components/header";
@@ -13,6 +14,10 @@ import Sags from "./pages/Sags";
 import MensShoes from "./components/mensShoes";
 import WomenShoes from "./components/WomenShoes";
 import KidsShoes from "./components/KidsShoes";
+import Shirts from "./components/Shirts";
+import Sneaker from "./components/Sneakers";
+import Shorts from "./components/Shorts";
+import Soccer from "./components/Soccers";
 export const instance = axios.create({
   baseURL: "http://localhost:1234",
   headers: {
@@ -37,6 +42,11 @@ function App() {
           <Route path="/sags" element={<Sags />} />
           <Route path="/men" element={<MensShoes />} />
           <Route path="/women" element={<WomenShoes />} />
+          <Route path="/pants" element={<Pants />} />
+          <Route path="/sneakers" element={<Sneaker />} />
+          <Route path="/shorts" element={<Shorts />} />
+          <Route path="/soccers" element={<Soccer />} />
+          <Route path="/shirts" element={<Shirts />} />
           <Route path="/kids" element={<KidsShoes />} />
         </Routes>
       </BrowserRouter>
