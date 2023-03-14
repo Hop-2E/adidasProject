@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export const getAllUser = async (req, res) => {
   try {
-    const user = await User.find({});
+    const user = await User.find({}).populate("items");
     res.status(200).send({
       success: true,
       data: user,
@@ -24,6 +24,7 @@ export const getUser = async (req, res) => {
       success: true,
       data: user,
     });
+    console.log(user);
   } catch (error) {
     res.status(400).send({
       success: false,
