@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export const getAllUser = async (req, res) => {
   try {
-    const user = await User.find({}).populate("items");
+    const user = await User.find({});
     res.status(200).send({
       success: true,
       data: user,
@@ -19,12 +19,12 @@ export const getAllUser = async (req, res) => {
 export const getUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id).populate("items");
+    const user = await User.findById(id);
     res.status(200).send({
       success: true,
       data: user,
     });
-    console.log(user);
+    console.log("ajilla");
   } catch (error) {
     res.status(400).send({
       success: false,

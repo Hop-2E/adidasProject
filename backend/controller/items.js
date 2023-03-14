@@ -42,13 +42,3 @@ export const deleteItem = async (req, res) => {
     });
   }
 };
-export const uptadeItem = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const data = await Item.findByIdAndUpdate({ _id: id }, req.body);
-    res.status(200).send({
-      success: true,
-      data: data,
-    });
-  } catch (error) {}
-};

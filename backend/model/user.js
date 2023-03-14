@@ -22,8 +22,8 @@ const UserSchema = new mongoose.Schema(
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
 
-UserSchema.virtual("items", {
-  ref: "item",
+UserSchema.virtual("user", {
+  ref: "user",
   localField: "_id",
   foreignField: "user_id",
 });
