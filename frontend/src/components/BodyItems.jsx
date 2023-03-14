@@ -46,6 +46,9 @@ function BodyItems({ value }) {
     navbarWishList: {
       alignItems: "end",
     },
+    img: {
+      width: "100%",
+    },
   };
 
   const wishlist = async () => {
@@ -63,7 +66,12 @@ function BodyItems({ value }) {
     <div className="navbarMain" style={navbarStyle.navbarMain}>
       <div style={navbarStyle.navbarHelper} className="navbarHelper">
         <Link to={`./item/${value._id}`}>
-          <img src={value.img} alt="" className="imageOfItem" />
+          <img
+            style={navbarStyle.img}
+            src={value.img}
+            alt={value.img}
+            className="imageOfItem"
+          />
         </Link>
         <div style={navbarStyle.navbarPrice}>{value.price}$</div>
       </div>

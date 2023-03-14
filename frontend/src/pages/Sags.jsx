@@ -98,7 +98,7 @@ const Sags = () => {
           order: data,
         }
       );
-      toast("request");
+      toast("requested");
       console.log("asd");
     } catch (error) {
       toast.error("aldaa");
