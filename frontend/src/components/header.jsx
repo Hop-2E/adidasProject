@@ -5,6 +5,7 @@ import Login from "./login";
 import Logo from "./Logo";
 import "../App.css";
 import CreateItem from "./CreateItem";
+
 const Header = () => {
   const searchRef = useRef();
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const Header = () => {
   const searchButton = () => {
     navigate(`./${searchRef.current.value}`);
   };
+
   return (
     <>
       <div className="headerZero">
@@ -61,8 +63,7 @@ const Header = () => {
           <Link to={"/"}>
             <Logo />
           </Link>
-        </div>
-
+        </div>{" "}
         <div className="mainHeader">
           <Link to="/men">
             <div className="hovered">MEN </div>

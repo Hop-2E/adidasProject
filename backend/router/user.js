@@ -5,6 +5,7 @@ import {
   getAllUser,
   getUser,
   login,
+  order,
   removeSags,
   removeWishlist,
   sags,
@@ -14,7 +15,7 @@ import {
 const routerUser = express.Router();
 
 routerUser.get("/", getAllUser).post("/", createUser).post("/login", login);
-routerUser.route("/:id").delete(deleteUser).get(getUser);
+routerUser.route("/:id").delete(deleteUser).get(getUser).put(order);
 routerUser.route("/sags/:id").put(sags);
 routerUser.route("/wishlist/:id").put(wishlist);
 routerUser.route("/removeSags/:id").put(removeSags);

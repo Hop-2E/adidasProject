@@ -18,7 +18,10 @@ const BodyAdmin = () => {
         {items &&
           items.map((item) => {
             return (
-              <SagsRequests sags={item.sagsItem} username={item.username} />
+              (item.order.length !== 0 && (
+                <SagsRequests sags={item.order} username={item.username} />
+              )) ||
+              ""
             );
           })}
       </div>

@@ -10,13 +10,13 @@ function BodyItems({ value }) {
       margin: "20px",
       width: "278px",
       height: "370px",
-      borderRadius: "10px",
       zIndex: "0",
     },
     navbarContainer: {
       display: "flex",
     },
     navbarHelper: {
+      width: "100%",
       position: "relative",
       textAlign: "center",
     },
