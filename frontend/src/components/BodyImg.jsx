@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 const BodyImg = () => {
   return (
     <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
           src="https://approval.studio/wp-content/uploads/elementor/thumbs/branding-story-of-adidas-phxr316ifopepwoi0z20kyaqn4g405p30ulyt2m8fk.jpg"
@@ -19,7 +19,7 @@ const BodyImg = () => {
         />
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
           src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/84589835172167.56ec20e07a472.png"

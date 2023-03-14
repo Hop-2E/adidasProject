@@ -9,7 +9,7 @@ function BodyItems({ value }) {
     navbarMain: {
       margin: "20px",
       width: "278px",
-      height: "370px",
+      minHeight: "400px",
       zIndex: "0",
     },
     navbarContainer: {
@@ -71,6 +71,12 @@ function BodyItems({ value }) {
         <div style={navbarStyle.navbarHelper2}>
           <div style={navbarStyle.navbarName}>{value.name}</div>
           <div style={navbarStyle.navbarType}>{value.type}</div>
+          <div>
+            {value &&
+              value.color.map((el) => {
+                return el;
+              })}
+          </div>
         </div>
         <svg
           style={navbarStyle.navbarWishList}

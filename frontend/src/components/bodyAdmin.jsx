@@ -2,6 +2,7 @@ import { useState } from "react";
 import { instance } from "../App";
 import { useEffect } from "react";
 import SagsRequests from "./SagsRequests";
+import BodyNavbar from "./BodyNavbar";
 
 const BodyAdmin = () => {
   const [items, setItems] = useState();
@@ -25,6 +26,7 @@ const BodyAdmin = () => {
             );
           })}
       </div>
+      <BodyNavbar />
     </div>
   );
 };
@@ -34,6 +36,7 @@ const styleSags = {
     width: "100vw",
     display: "flex",
     justifyContent: "center",
+    flexDirection: "column",
   },
   miniContainer: {
     width: "70vw",
