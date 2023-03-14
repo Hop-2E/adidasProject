@@ -95,7 +95,7 @@ const Sags = () => {
       const res = await instance.put(
         `/customers/${JSON.parse(localStorage.getItem("user_id"))}`,
         {
-          order: { data },
+          order: data,
         }
       );
       toast("request");
