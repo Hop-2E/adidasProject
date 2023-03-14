@@ -5,11 +5,15 @@ import Login from "./login";
 import Logo from "./Logo";
 import "../App.css";
 import CreateItem from "./CreateItem";
+import { Opacity } from "../App";
+import { useContext } from "react";
 
 const Header = () => {
   const searchRef = useRef();
   const navigate = useNavigate();
   const [admin, setAdmin] = useState();
+  const { setIsOpacity, isOpacity } = useContext(Opacity);
+  console.log(isOpacity);
   const [displayLogin, setdisplayLogin] = useState({
     display: "none",
     isDisplay: false,
@@ -34,8 +38,10 @@ const Header = () => {
   const loginPage = () => {
     if (displayLogin.isDisplay === false) {
       setdisplayLogin({ display: "inline", isDisplay: true });
+      setIsOpacity(false);
     } else {
       setdisplayLogin({ display: "none", isDisplay: false });
+      setIsOpacity(true);
     }
   };
 

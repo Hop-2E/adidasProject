@@ -77,6 +77,7 @@ function BodyItems({ value }) {
                 return el;
               })}
           </div>
+          <div></div>
         </div>
         <svg
           style={navbarStyle.navbarWishList}

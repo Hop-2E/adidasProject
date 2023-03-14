@@ -19,12 +19,12 @@ export const instance = axios.create({
     "Content-type": "application/json; charset=UTF-8",
   },
 });
-export const DarkMode = createContext();
+export const Opacity = createContext();
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isOpacity, setIsOpacity] = useState(true);
 
   return (
-    <DarkMode.Provider value={{ isDarkMode, setIsDarkMode }}>
+    <Opacity.Provider value={{ isOpacity, setIsOpacity }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -40,7 +40,7 @@ function App() {
           <Route path="/kids" element={<KidsShoes />} />
         </Routes>
       </BrowserRouter>
-    </DarkMode.Provider>
+    </Opacity.Provider>
   );
 }
 

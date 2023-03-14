@@ -4,17 +4,18 @@ const CreateItem = ({ value }) => {
   const styleCreate = {
     create: {
       width: "30vw",
-      height: "600px",
+      height: "800px",
       backgroundColor: "white",
       display: value,
       position: "fixed",
       top: 200,
       left: "35vw",
       border: "1px solid black",
+      zIndex: "1",
     },
     createContainer: {
       width: "30vw",
-      height: "600px",
+      height: "800px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -83,6 +84,7 @@ const CreateItem = ({ value }) => {
   const typeRef = useRef();
   const imageRef = useRef();
   const storageRef = useRef();
+  const typeOfClothes = useRef();
 
   const createButton = async () => {
     const res = await instance.post("/items", {
@@ -92,6 +94,7 @@ const CreateItem = ({ value }) => {
       color: colorRef.current.value,
       img: imageRef.current.value,
       storage: storageRef.current.value,
+      typeOfClothes: typeOfClothes.current.value,
       token: JSON.parse(localStorage.getItem("token")),
       role: JSON.parse(localStorage.getItem("role")),
     });
@@ -157,6 +160,15 @@ const CreateItem = ({ value }) => {
               style={styleCreate.input}
               ref={storageRef}
               placeholder="storage"
+            />
+          </div>
+          <div className="inputContainer" style={styleCreate.miniContainer}>
+            <input
+              type="text"
+              className="input"
+              style={styleCreate.input}
+              ref={typeOfClothes}
+              placeholder="type of clothes"
             />
           </div>
         </div>

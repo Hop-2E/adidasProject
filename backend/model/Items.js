@@ -11,6 +11,11 @@ const ItemSchema = new mongoose.Schema({
   type: {
     type: Array,
   },
+  typeOfClothes: {
+    type: String,
+    enum: ["sneakers", "soccers", "shirts", "pants", "shorts"],
+    default: "sneakers",
+  },
   color: {
     type: Array,
   },
