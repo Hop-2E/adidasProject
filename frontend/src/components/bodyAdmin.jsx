@@ -15,6 +15,7 @@ const BodyAdmin = () => {
   }, [items]);
   return (
     <div style={styleSags.container}>
+      <BodyNavbar />
       <div style={styleSags.miniContainer}>
         {items &&
           items.map((item) => {
@@ -26,7 +27,6 @@ const BodyAdmin = () => {
             );
           })}
       </div>
-      <BodyNavbar />
     </div>
   );
 };
@@ -36,6 +36,7 @@ const styleSags = {
     width: "100vw",
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     flexDirection: "column",
   },
   miniContainer: {
