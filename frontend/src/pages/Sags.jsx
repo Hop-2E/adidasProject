@@ -92,7 +92,7 @@ const Sags = () => {
   }, [data]);
   const order = async () => {
     try {
-      const res = await instance.put(
+      await instance.put(
         `/customers/${JSON.parse(localStorage.getItem("user_id"))}`,
         {
           order: data,

@@ -184,32 +184,3 @@ const Header = () => {
   );
 };
 export default Header;
-const styles = {
-  headerZero: {
-    height: "40px",
-    width: "100vw",
-    backgroundColor: "black",
-    color: "white",
-    display: "flex",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-  },
-  header: {
-    display: "flex",
-    flexDirection: "row",
-    height: "80px",
-    width: "100vw",
-    justifyContent: "space-between",
-  },
-  logo: {
-    display: "flex",
-    flexdirection: "row",
-    height: "100px",
-    width: "140px",
-  },
-  mainHeader: {
-    display: "flex",
-    alignItems: "flex-end",
-    marginBottom: "15px",
-  },
-};

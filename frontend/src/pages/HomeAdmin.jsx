@@ -32,9 +32,3 @@ const HomeLogged = () => {
   );
 };
 export default HomeLogged;
-const styles = {
-  homeLogged: {
-    display: "flex",
-    flexDirection: "column",
-  },
-};

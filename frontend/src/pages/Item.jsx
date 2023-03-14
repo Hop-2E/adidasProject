@@ -19,10 +19,10 @@ const Item = () => {
   };
   useEffect(() => {
     getData();
-  }, []);
+  }, [data]);
   const sags = async () => {
     try {
-      const response = await instance.put(
+      await instance.put(
         `customers/sags/${JSON.parse(localStorage.getItem("user_id"))}`,
         {
           data: data,
@@ -89,6 +89,9 @@ const Item = () => {
       padding: "10px",
       height: "45px",
     },
+    stock: {
+      fontWeight: "bolder",
+    },
   };
   return (
     <div>
@@ -153,7 +156,11 @@ const Item = () => {
           </div>
           <div style={style.title}>ULTRABOOST LIGHT</div>
           <div style={style.name}>{data && data.name}</div>
-          <div style={style.price}>${data && data.price}</div>
+          <div style={style.header}>
+            {" "}
+            <div style={style.price}>${data && data.price}</div>
+            <div style={style.stock}>{data && data.storage} in stock</div>
+          </div>
           <div style={style.color}>{data && data.color}</div>
           <div style={style.desp}>
             This product is excluded from all promotional discount and offers

@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 function WishListItem({ values }) {
   const removeWishlist = async () => {
     try {
-      const res = await instance.put(
+      await instance.put(
         `/customers/removeWishlist/${JSON.parse(
           localStorage.getItem("user_id")
         )}`,

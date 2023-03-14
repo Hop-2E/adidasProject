@@ -22,11 +22,7 @@ export const instance = axios.create({
 export const DarkMode = createContext();
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const styles = {
-    body: {
-      // backgroundColor: isDarkMode ? "white" : "grey",
-    },
-  };
+
   return (
     <DarkMode.Provider value={{ isDarkMode, setIsDarkMode }}>
       <BrowserRouter>

@@ -50,7 +50,7 @@ function BodyItems({ value }) {
 
   const wishlist = async () => {
     try {
-      const res = await instance.put(
+      await instance.put(
         `/customers/wishlist/${JSON.parse(localStorage.getItem("user_id"))}`,
         {
           value,

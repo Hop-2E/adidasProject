@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { instance } from "../App";
 import Accept from "./Accept";
 
 const SagsRequests = ({ sags, username }) => {

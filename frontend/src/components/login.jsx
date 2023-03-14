@@ -117,7 +117,7 @@ const Login = ({ value }) => {
     } else {
       if (repassRef.current.value === passRef.current.value) {
         try {
-          const res = await instance.post("/customers", {
+          await instance.post("/customers", {
             username: emailRef.current.value,
             password: passRef.current.value,
           });

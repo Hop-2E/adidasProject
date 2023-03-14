@@ -2,12 +2,11 @@ import Header from "./header";
 import "../App.css";
 import Arrow from "../assets/arrow.png";
 import BottomArrow from "../assets/bottomArrow.png";
-import { useDebugValue, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
 import BodyItems from "./BodyItems";
 import FooterBlack from "./FooterBlack";
-import FooterADS from "./FooterADS";
 
 const styles = {
   back: {
@@ -95,7 +94,7 @@ const KidsShoes = () => {
 
       <p style={styles.back}>
         <Link to={`/${JSON.parse(localStorage.getItem("user_id"))}`}>
-          <img src={Arrow} width="30" height="10" /> Back
+          <img src={Arrow} alt={Arrow} width="30" height="10" /> Back
         </Link>
       </p>
       <div style={styles.men}>
@@ -131,7 +130,7 @@ const KidsShoes = () => {
           <p>Page:</p>
           <button style={styles.button}>
             1
-            <img src={BottomArrow} width="15" height="15" />
+            <img src={BottomArrow} alt={BottomArrow} width="15" height="15" />
           </button>
           <p>
             of 33

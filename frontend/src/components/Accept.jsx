@@ -16,7 +16,7 @@ const Accept = ({ accept }) => {
 
   const accepted = async () => {
     if (!data.accept) {
-      const res = await instance.put(`items/${accept._id}`, {
+      await instance.put(`items/${accept._id}`, {
         token: JSON.parse(localStorage.getItem("token")),
         storage: data.storage - 1,
         accept: true,

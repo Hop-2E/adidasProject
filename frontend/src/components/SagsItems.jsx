@@ -15,13 +15,13 @@ const SagsItems = ({ item }) => {
   };
 
   const removeSags = async () => {
-    const res = await instance.put(
+    await instance.put(
       `customers/removeSags/${JSON.parse(localStorage.getItem("user_id"))}`,
       {
         data: item,
       }
     );
-    const items = await instance.put(`items/${item._id}`, {
+    await instance.put(`items/${item._id}`, {
       token: JSON.parse(localStorage.getItem("token")),
       accept: false,
     });

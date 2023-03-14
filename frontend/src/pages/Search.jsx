@@ -85,7 +85,7 @@ const Search = () => {
         {" "}
         <p style={styles.back}>
           <Link to={`/${JSON.parse(localStorage.getItem("user_id"))}`}>
-            <img src={Arrow} width="30" height="10" /> Back
+            <img src={Arrow} width="30" height="10" alt={Arrow} /> Back
           </Link>
         </p>
         <div style={styles.men}>
@@ -126,6 +126,8 @@ const Search = () => {
           data.map((item) => {
             if (item.name.includes(search)) {
               return <BodySearch item={item} />;
+            } else {
+              return "";
             }
           })}
       </div>
