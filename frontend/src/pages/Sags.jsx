@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { instance } from "../App";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import FooterBlack from "../components/FooterBlack";
 import Header from "../components/header";
 import SagsItems from "../components/SagsItems";
@@ -90,13 +91,18 @@ const Sags = () => {
     getData();
   }, [data]);
   const order = async () => {
-    const res = await instance.put(
-      `/customers/${JSON.parse(localStorage.getItem("user_id"))}`,
-      {
-        order: { data },
-      }
-    );
-    console.log("asd");
+    try {
+      const res = await instance.put(
+        `/customers/${JSON.parse(localStorage.getItem("user_id"))}`,
+        {
+          order: { data },
+        }
+      );
+      toast("request");
+      console.log("asd");
+    } catch (error) {
+      toast.error("aldaa");
+    }
   };
   return (
     <div>
@@ -158,6 +164,7 @@ const Sags = () => {
       <div style={{ marginTop: "5vh" }}>
         <FooterBlack />
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -7,6 +7,8 @@ import FooterADS from "../components/FooterADS";
 import FooterBlack from "../components/FooterBlack";
 import FooterNavbar from "../components/FooterNavbar";
 import Header from "../components/header";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Item = () => {
   const { id } = useParams();
@@ -19,13 +21,18 @@ const Item = () => {
     getData();
   }, []);
   const sags = async () => {
-    const response = await instance.put(
-      `customers/sags/${JSON.parse(localStorage.getItem("user_id"))}`,
-      {
-        data: data,
-        accept: false,
-      }
-    );
+    try {
+      const response = await instance.put(
+        `customers/sags/${JSON.parse(localStorage.getItem("user_id"))}`,
+        {
+          data: data,
+          accept: false,
+        }
+      );
+      toast("added to bag");
+    } catch (error) {
+      toast.error("aldaa");
+    }
   };
   const style = {
     header: {
@@ -168,6 +175,7 @@ const Item = () => {
       </div>
       <FooterNavbar />
       <FooterBlack />
+      <ToastContainer />
     </div>
   );
 };

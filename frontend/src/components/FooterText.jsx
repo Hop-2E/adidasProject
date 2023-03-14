@@ -1,13 +1,34 @@
 import React from "react";
 
 function FooterText() {
+  const style = {
+    main: {
+      height: "55vh",
+      display: "flex",
+      backgroundColor: "#F5F5E5",
+      padding: "80px",
+      justifyContent: "center",
+    },
+    title: {
+      width: "340px",
+      fontWeight: "800",
+      fontSize: "35px",
+    },
+    text: {
+      marginTop: "2vh",
+      width: "800px",
+    },
+    helper: {
+      marginLeft: "4vw",
+    },
+  };
   return (
-    <div className="footerText">
-      <div className="ftItems">
-        <div className="ftTitle">
+    <div style={style.main}>
+      <div style={style.helper}>
+        <div style={style.title}>
           Stories, style, and sporting goods at adidas, since 1949
         </div>
-        <div className="ftText">
+        <div style={style.text}>
           Through sports, we have the power to change lives. Sports keep us fit.
           They keep us mindful. They bring us together. Athletes inspire us.
           They help us to get up and get moving. And sporting goods featuring
@@ -19,7 +40,7 @@ function FooterText() {
           the finish line. We’re here to support creators. To improve their
           game. To live their lives. And to change the world.
         </div>
-        <div className="ftText">
+        <div style={style.text}>
           adidas is about more than sportswear and workout clothes. We partner
           with the best in the industry to co-create. This way we offer our fans
           the sporting goods, style and clothing that match the athletic needs,
@@ -28,9 +49,9 @@ function FooterText() {
           have on our world.
         </div>
       </div>
-      <div className="ftItemss">
-        <div className="ftTitle">Workout clothes, for any sport</div>
-        <div className="ftText">
+      <div style={style.helper}>
+        <div style={style.title}>Workout clothes, for any sport</div>
+        <div style={style.text}>
           adidas designs for athletes of all kinds. Creators who love to change
           the game. People who challenge conventions, break the rules, and
           define new ones. Then break them all over again. We design sports
@@ -44,7 +65,7 @@ function FooterText() {
           Classic sports models are brought back to life on the streets and the
           stages around the world.
         </div>
-        <div className="ftText">
+        <div style={style.text}>
           Through our collections we blur the borders between high fashion and
           high performance. Like our adidas by Stella McCartney athletic
           clothing collection – designed to look the part inside and outside of

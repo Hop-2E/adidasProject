@@ -149,7 +149,7 @@ const Login = ({ value }) => {
           </div>
           <div className="passwordContainer" style={stylesLogin.miniContainer}>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               ref={passRef}
               style={stylesLogin.coolLaber}
@@ -157,7 +157,7 @@ const Login = ({ value }) => {
           </div>
           <div className="passwordContainer" style={stylesLogin.none}>
             <input
-              type="text"
+              type="password"
               ref={repassRef}
               placeholder="password again"
               style={stylesLogin.coolLaber}
