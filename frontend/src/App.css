@@ -150,3 +150,21 @@ a:active {
   color:white;
  background-color:black;
 }
+.bodybtn{
+  color: white; 
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  font-family: var(--gl-body-font-set-family-functional-10),var(--gl-font-family-fallback);
+  font-size: var(--gl-body-font-set-size-functional-10);
+  font-style: var(--gl-body-font-set-style-functional-10);
+  font-weight: var(--gl-body-font-set-weight-functional-10);
+  letter-spacing: var(--gl-body-font-set-letterspacing-functional-10);
+  line-height: var(--gl-body-font-set-lineheight-functional-10);
+}
+.btn{
+  color: black;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+}
