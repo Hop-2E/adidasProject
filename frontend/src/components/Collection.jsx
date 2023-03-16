@@ -22,6 +22,7 @@ function Collection() {
     },
     Desp: {
       marginTop: "8px",
+      color:"#525252"
     },
   };
   return (

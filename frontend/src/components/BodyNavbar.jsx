@@ -12,7 +12,7 @@ function BodyNavbar() {
   };
   useEffect(() => {
     getData();
-  }, [data]);
+  }, []);
   return (
     <div
       style={{

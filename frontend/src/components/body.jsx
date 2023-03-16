@@ -13,7 +13,7 @@ const Body = () => {
       <BodyImg />
       <div style={{ marginTop: "40px", marginBottom: "40px" }}>
         <BodyTitle />
-        <BodyNavbar />
+       <div style={{width: "55vw", overflow: "scroller"}}> <BodyNavbar /></div>
       </div>
       <div>
         <Collection />
