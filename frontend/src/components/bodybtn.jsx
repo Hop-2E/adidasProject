@@ -10,7 +10,7 @@ const BodyBtn = () => {
         new era.
       </div>
       <div className="btn">
-        <Button variant="outline-light" size="lg" className="mb-3">
+        <Button variant="light" size="lg" className="mb-3">
           <Link to={"/men"}>
             SHOP MEN{" "}
             <svg
@@ -28,7 +28,7 @@ const BodyBtn = () => {
             </svg>
           </Link>
         </Button>
-        <Button variant="outline-light" size="lg" className="mb-3">
+        <Button variant="light" size="lg" className="mb-3">
           <Link to={"/women"}>
             SHOP WOMEN{" "}
             <svg
@@ -46,7 +46,7 @@ const BodyBtn = () => {
             </svg>
           </Link>
         </Button>
-        <Button variant="outline-light">
+        <Button variant="light">
         <Link to={"/kids"}>
             SHOP KIDS{" "}
             <svg
