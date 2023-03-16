@@ -47,7 +47,7 @@ function BodyItems({ value }) {
       alignItems: "end",
     },
     img: {
-      width: "100%",
+      width: "",
     },
   };
 
@@ -73,7 +73,9 @@ function BodyItems({ value }) {
             className="imageOfItem"
           />
         </Link>
-        <div style={navbarStyle.navbarPrice}>{value.price}$</div>
+        <div>
+          <div style={navbarStyle.navbarPrice}>{value.price}$</div>
+        </div>
       </div>
       <div style={navbarStyle.navbarContainer}>
         <div style={navbarStyle.navbarHelper2}>

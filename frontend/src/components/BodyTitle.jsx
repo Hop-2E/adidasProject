@@ -26,47 +26,19 @@ function BodyTitle() {
     },
   };
   return (
-    <div>
-      <div>
-        <div
-            style={{
-            color: "black",
-            fontSize: "30px",
-            fontWeight: "bolder",
-            marginLeft: "240px",
-          }}>
-            Still Interested?
-          </div>
-          <div
-            style={{
-              display: "flex",
-              overflowX: "scroll",
-              width: "100vw",
-              height: "55vh",
-              alignItems: "center",
-              zIndex: "-1",
-            }}
-          >
-            {data &&
-              data.map((value) => {
-                return <BodyItems value={value} />;
-              })}
-          </div>
+    <div style={style.Main}>
+      <div
+        style={{
+          color: "black",
+          fontSize: "30px",
+          fontWeight: "bolder",
+          marginLeft: "240px",
+        }}
+      >
+        New Arrivals
       </div>
-      <div style={style.Main}>
-        <div
-          style={{
-            color: "black",
-            fontSize: "30px",
-            fontWeight: "bolder",
-            marginLeft: "240px",
-          }}
-        >
-          New Arrivals
-        </div>
-        <div style={style.title}>What's Trending</div>
-        <div style={style.title}>Member Exclusives</div>
-      </div>
+      <div style={style.title}>What's Trending</div>
+      <div style={style.title}>Member Exclusives</div>
     </div>
   );
 }

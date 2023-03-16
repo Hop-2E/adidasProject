@@ -2,7 +2,6 @@ import Header from "./header";
 import "../App.css";
 import Arrow from "../assets/arrow.png";
 import BottomArrow from "../assets/bottomArrow.png";
-import { useDebugValue, useEffect, useState } from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../App";

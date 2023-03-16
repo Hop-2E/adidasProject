@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const BodyBtn = () => {
   return (
     <div className="bodybtn">
@@ -10,7 +10,7 @@ const BodyBtn = () => {
         new era.
       </div>
       <div className="btn">
-        <Button variant="light" size="lg" className="mb-3">
+        <Button variant="light" size="lg" className="mb-1">
           <Link to={"/men"}>
             SHOP MEN{" "}
             <svg
@@ -28,7 +28,7 @@ const BodyBtn = () => {
             </svg>
           </Link>
         </Button>
-        <Button variant="light" size="lg">
+        <Button variant="light" size="lg" class="btn btn-light">
           <Link to={"/women"}>
             SHOP WOMEN{" "}
             <svg

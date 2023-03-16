@@ -10,7 +10,7 @@ function Stories() {
     Main: {
       width: "100vw",
       marginTop: "90px",
-      marginBottom: "-100px",
+      marginBottom: "-340px",
     },
     Container: {
       width: "19vw",
@@ -39,7 +39,7 @@ function Stories() {
     },
     text: {
       paddingLeft: "30px",
-      color:"#525252"
+      color: "#525252",
     },
   };
   return (
