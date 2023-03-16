@@ -14,6 +14,7 @@ function Collection() {
       width: "19vw",
       marginLeft: "10px",
       flexDirection: "column",
+      borderRadius: "10px",
     },
     Title: {
       fontWeight: "bolder",
@@ -27,9 +28,9 @@ function Collection() {
   };
   return (
     <div style={Collection.Main}>
-      <div style={Collection.Container}>
+      <div style={Collection.Container} className="collectionMain">
         <img
-          style={{ width: "19vw", height: "45vh" }}
+          style={{ width: "19vw", height: "45vh", borderRadius: "10px" }}
           src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_800,w_800/enUS/Images/OG102_SS23-March-men-tcc-2_tcm221-998856.jpg"
           alt=""
         />
@@ -48,7 +49,7 @@ function Collection() {
           SHOP NOW
         </div>
       </div>
-      <div style={Collection.Container}>
+      <div style={Collection.Container} className="collectionMain">
         {" "}
         <img
           style={{ width: "19vw", height: "45vh" }}
@@ -70,7 +71,7 @@ function Collection() {
           SHOP NOW
         </div>
       </div>
-      <div style={Collection.Container}>
+      <div style={Collection.Container} className="collectionMain">
         {" "}
         <img
           style={{ width: "19vw", height: "45vh" }}
@@ -92,7 +93,7 @@ function Collection() {
           SHOP NOW
         </div>
       </div>
-      <div style={Collection.Container}>
+      <div style={Collection.Container} className="collectionMain">
         {" "}
         <img
           style={{ width: "19vw", height: "45vh" }}

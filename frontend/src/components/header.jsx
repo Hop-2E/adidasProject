@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./login";
+import Logo from "./Logo";
 import "../App.css";
 import CreateItem from "./CreateItem";
+import { Opacity } from "../App";
+import { useContext } from "react";
+
 const Header = () => {
   const searchRef = useRef();
   const navigate = useNavigate();
   const [admin, setAdmin] = useState();
+  const { setIsOpacity, isOpacity } = useContext(Opacity);
+  console.log(isOpacity);
   const [displayLogin, setdisplayLogin] = useState({
     display: "none",
     isDisplay: false,
@@ -32,8 +38,10 @@ const Header = () => {
   const loginPage = () => {
     if (displayLogin.isDisplay === false) {
       setdisplayLogin({ display: "inline", isDisplay: true });
+      setIsOpacity(false);
     } else {
       setdisplayLogin({ display: "none", isDisplay: false });
+      setIsOpacity(true);
     }
   };
 
@@ -48,6 +56,7 @@ const Header = () => {
   const searchButton = () => {
     navigate(`./${searchRef.current.value}`);
   };
+
   return (
     <>
       <div className="headerZero">
@@ -58,10 +67,9 @@ const Header = () => {
       <div className="header">
         <div>
           <Link to={"/"}>
-            <img alt="" className="logo" />
+            <Logo />
           </Link>
-        </div>
-
+        </div>{" "}
         <div className="mainHeader">
           <Link to="/men">
             <div className="hovered">MEN </div>
@@ -72,8 +80,12 @@ const Header = () => {
           <Link to="/kids">
             <div className="hovered">KIDS </div>
           </Link>
-          <div className="hovered">SALE </div>
-          <div className="hovered">3 SRTRIPE LIFE</div>
+          <Link>
+            <div className="hovered">SALE </div>
+          </Link>
+          <Link>
+            <div className="hovered">3 SRTRIPE LIFE</div>
+          </Link>
         </div>
         <div className="rightHeader">
           <div className="rightHeaderDiv">
@@ -178,32 +190,3 @@ const Header = () => {
   );
 };
 export default Header;
-const styles = {
-  headerZero: {
-    height: "40px",
-    width: "100vw",
-    backgroundColor: "black",
-    color: "white",
-    display: "flex",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-  },
-  header: {
-    display: "flex",
-    flexDirection: "row",
-    height: "80px",
-    width: "100vw",
-    justifyContent: "space-between",
-  },
-  logo: {
-    display: "flex",
-    flexdirection: "row",
-    height: "100px",
-    width: "140px",
-  },
-  mainHeader: {
-    display: "flex",
-    alignItems: "flex-end",
-    marginBottom: "15px",
-  },
-};

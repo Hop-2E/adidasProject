@@ -12,12 +12,14 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.header {
+/* .header {
   display: flex;
   flex-direction: row;
+  background-color: white;
   height: 80px;
   width: 100vw;
   justify-content: space-between;
+
 }
 .logo {
   display: flex;
@@ -30,6 +32,7 @@
   display: flex;
   align-items: flex-end;
   margin-bottom: 15px;
+  column-gap: 10px;
 }
 .mainHeader > div {
   margin-left: 15px;
@@ -46,6 +49,53 @@
 .rightHeaderDiv > div {
   margin-left: 10px;
   margin: 10px;
+} */
+.header {
+  border: 1px solid #eceff1;
+  display: flex;
+  flex-direction: row;
+  height: 9vh;
+  width: 100vw;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100px;
+}
+.mainHeader {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 250px;
+  margin-bottom: 15px;
+}
+.mainHeader > div {
+  margin-left: 15px;
+  font-weight: bolder;
+  color: black;
+}
+.rightHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.rightHeaderDiv {
+  display: flex;
+  font-size: 13px;
+  padding-right: 20px;
+}
+.rightHeaderDiv > div {
+  margin-left: 10px;
+  margin: 10px;
+}
+.hovered {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.hovered:visited {
+  color: black;
 }
 
 /* Body */
@@ -85,18 +135,12 @@ a:active {
   box-shadow: 5px 5px 0px 0px rgb(182, 180, 180);
 }
 .imageOfItem {
-  width: 278px;
-  height: 278px;
-  border-radius: 10px;
-}
-.imageOfItem:hover {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 .navbarHelper:hover {
-  width: 278px;
+  width: 290px;
   height: 278px;
-  border-radius: 10px;
   overflow: hidden;
 }
 /*item.jsx*/
@@ -154,4 +198,28 @@ a:active {
   font-size: 15px;
   margin-left: 5%;
   margin-top: 3%;
+.height {
+  min-height: 80vh;
+}
+.map:hover{
+  color:white;
+ background-color:black;
+}
+.bodybtn{
+  color: white; 
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  font-family: var(--gl-body-font-set-family-functional-10),var(--gl-font-family-fallback);
+  font-size: var(--gl-body-font-set-size-functional-10);
+  font-style: var(--gl-body-font-set-style-functional-10);
+  font-weight: var(--gl-body-font-set-weight-functional-10);
+  letter-spacing: var(--gl-body-font-set-letterspacing-functional-10);
+  line-height: var(--gl-body-font-set-lineheight-functional-10);
+}
+.btn{
+  color: black;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
 }

@@ -24,6 +24,9 @@ const UserSchema = new mongoose.Schema(
     wishlist: {
       type: Array,
     },
+    order: {
+      type: Array,
+    },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

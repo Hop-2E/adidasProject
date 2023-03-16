@@ -18,10 +18,9 @@ function BodyNavbar() {
       style={{
         display: "flex",
         overflowX: "scroll",
-        width: "100vw",
+        width: "79vw",
         height: "55vh",
         alignItems: "center",
-        zIndex: "-1",
       }}
     >
       {data &&

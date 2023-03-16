@@ -3,9 +3,11 @@ import "../App.css";
 import Arrow from "../assets/arrow.png";
 import BottomArrow from "../assets/bottomArrow.png";
 import { useDebugValue, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
 import BodyItems from "./BodyItems";
+import FooterBlack from "./FooterBlack";
 
 const styles = {
   back: {
@@ -14,6 +16,7 @@ const styles = {
   },
   menshoes: {
     fontSize: "150%",
+    fontWeight: "bolder",
   },
   mainType: {
     display: "flex",
@@ -50,6 +53,7 @@ const styles = {
     display: "flex",
     alignItems: "baseline",
     gap: "10px",
+    minHeight: "200px",
   },
   button: {
     fontSize: "100%",
@@ -92,7 +96,7 @@ const MensShoes = () => {
 
       <p style={styles.back}>
         <Link to={`/${JSON.parse(localStorage.getItem("user_id"))}`}>
-          <img src={Arrow} width="30" height="10" /> Back
+          <img src={Arrow} width="30" height="10" alt={Arrow} /> Back
         </Link>
       </p>
       <div style={styles.men}>
@@ -105,16 +109,21 @@ const MensShoes = () => {
       </div>
       <div style={styles.mainShoes}>
         <div style={styles.mainType}>
-          <div>All Men's Shoes</div>
-          <div>Sneakers</div>
-          <div>Soccer</div>
-          <div>Sandals & Slides</div>
-          <div>Workout & Gym</div>
-          <div>Basketball</div>
-          <div>Shoes $100 & Under</div>
-          <div>Golf</div>
-          <div>Baseball</div>
-          <div>Football</div>
+          <Link to="/soccers">
+            <div>Soccers</div>
+          </Link>
+          <Link to="/shirts">
+            <div>Shirts</div>
+          </Link>
+          <Link to="/sneakers">
+            <div>Sneakers</div>
+          </Link>
+          <Link to="/shorts">
+            <div>Shorts</div>
+          </Link>
+          <Link to="/pants">
+            <div>Pants</div>
+          </Link>
         </div>
         <div style={styles.shoes}>
           {filtered &&
@@ -128,7 +137,7 @@ const MensShoes = () => {
           <p>Page:</p>
           <button style={styles.button}>
             1
-            <img src={BottomArrow} width="15" height="15" />
+            <img src={BottomArrow} alt={BottomArrow} width="15" height="15" />
           </button>
           <p>
             of 33
@@ -138,6 +147,7 @@ const MensShoes = () => {
           </p>
         </p>
       </div>
+      <FooterBlack />
     </div>
   );
 };

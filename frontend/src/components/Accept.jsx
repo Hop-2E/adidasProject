@@ -6,20 +6,26 @@ import "react-toastify/dist/ReactToastify.css";
 const Accept = ({ accept }) => {
   const [data, setData] = useState();
   const getData = async () => {
-    const res = await instance.get(`items/${accept}`);
+    const res = await instance.get(`items/${accept._id}`);
     setData(res.data.data);
   };
 
   useEffect(() => {
     getData();
-  }, [data]);
-
+  }, []);
   const accepted = async () => {
     if (!data.accept) {
-      const res = await instance.put(`items/${accept}`, {
+      await instance.put(`items/${accept._id}`, {
         token: JSON.parse(localStorage.getItem("token")),
-        storage: data.storage + 1,
+        storage: data.storage - 1,
         accept: true,
+      });
+      setData((prev) => {
+        return {
+          ...prev,
+          storage: prev.storage - 1,
+          accept: true,
+        };
       });
     } else {
       toast("already accepted");
@@ -62,6 +68,9 @@ const stylesOfSags = {
   button: {
     width: "100px",
     height: "30px",
+    backgroundColor: "#363738",
+    color: "white",
+    borderRaduis: "10px",
   },
   bigContainer: {
     border: "0.5px solid grey",

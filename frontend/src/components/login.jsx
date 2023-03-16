@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Login = ({ value }) => {
   const [switched, setSwitched] = useState(false);
-  const navigate = useNavigate();
+  const navigates = useNavigate();
   const loginToSignup = () => {
     if (switched) {
       setSwitched(false);
@@ -108,7 +108,7 @@ const Login = ({ value }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         localStorage.setItem("user_id", JSON.stringify(res.data.data._id));
         localStorage.setItem("role", JSON.stringify(res.data.data.role));
-        navigate(`/${res.data.data._id}`);
+        navigates(`/${res.data.data._id}`);
         window.location.reload();
       } catch (error) {
         console.log("LOGIN AJILLA");
@@ -117,10 +117,11 @@ const Login = ({ value }) => {
     } else {
       if (repassRef.current.value === passRef.current.value) {
         try {
-          const res = await instance.post("/customers", {
+          await instance.post("/customers", {
             username: emailRef.current.value,
             password: passRef.current.value,
           });
+          alert("succesfull");
         } catch (error) {
           console.log(emailRef, passRef);
           toast(error.response.data.error);
@@ -148,7 +149,7 @@ const Login = ({ value }) => {
           </div>
           <div className="passwordContainer" style={stylesLogin.miniContainer}>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               ref={passRef}
               style={stylesLogin.coolLaber}
@@ -156,7 +157,7 @@ const Login = ({ value }) => {
           </div>
           <div className="passwordContainer" style={stylesLogin.none}>
             <input
-              type="text"
+              type="password"
               ref={repassRef}
               placeholder="password again"
               style={stylesLogin.coolLaber}

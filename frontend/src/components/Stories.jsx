@@ -10,6 +10,7 @@ function Stories() {
     Main: {
       width: "100vw",
       marginTop: "90px",
+      marginBottom: "-100px",
     },
     Container: {
       width: "19vw",

@@ -4,16 +4,32 @@ import BodyNavbar from "./BodyNavbar";
 import Stories from "./Stories";
 import Collection from "./Collection";
 import BodyTitle from "./BodyTitle";
+import { Opacity } from "../App";
+import { useContext } from "react";
 
 const Body = () => {
+  const { isOpacity } = useContext(Opacity);
   return (
     <div
-      style={{ width: "100vw", height: "4000px", border: "1px solid black" }}
+      style={{
+        width: "100vw",
+        height: "auto",
+        marginBottom: "200px",
+        opacity: isOpacity ? "1" : "0.2",
+      }}
     >
       <BodyImg />
-      <div style={{ marginTop: "40px", marginBottom: "40px" }}>
+      <div
+        style={{
+          marginTop: "40px",
+        }}
+      >
         <BodyTitle />
-       <div style={{width: "55vw", overflow: "scroller"}}> <BodyNavbar /></div>
+        <div
+          style={{ width: "100vw", display: "flex", justifyContent: "center" }}
+        >
+          <BodyNavbar />
+        </div>
       </div>
       <div>
         <Collection />

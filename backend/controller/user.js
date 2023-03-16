@@ -184,3 +184,18 @@ export const removeWishlist = async (req, res) => {
     });
   }
 };
+export const order = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findByIdAndUpdate({ _id: id }, req.body);
+    res.status(200).send({
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      data: error.message,
+    });
+  }
+};

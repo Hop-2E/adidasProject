@@ -2,6 +2,7 @@ import { useState } from "react";
 import { instance } from "../App";
 import { useEffect } from "react";
 import SagsRequests from "./SagsRequests";
+import BodyNavbar from "./BodyNavbar";
 
 const BodyAdmin = () => {
   const [items, setItems] = useState();
@@ -14,11 +15,15 @@ const BodyAdmin = () => {
   }, [items]);
   return (
     <div style={styleSags.container}>
+      <BodyNavbar />
       <div style={styleSags.miniContainer}>
         {items &&
           items.map((item) => {
             return (
-              <SagsRequests sags={item.sagsItem} username={item.username} />
+              (item.order.length !== 0 && (
+                <SagsRequests sags={item.order} username={item.username} />
+              )) ||
+              ""
             );
           })}
       </div>
@@ -31,8 +36,11 @@ const styleSags = {
     width: "100vw",
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
   },
   miniContainer: {
     width: "70vw",
+    minHeight: "80vh",
   },
 };
