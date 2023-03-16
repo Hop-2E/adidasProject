@@ -21,6 +21,7 @@ const Search = () => {
       display: "flex",
       alignItems: "flex-end",
       gap: "2%",
+      width: "100%",
     },
     shoes: {
       marginTop: "3%",
@@ -98,16 +99,21 @@ const Search = () => {
         </div>
         <div style={styles.mainShoes}>
           <div style={styles.mainType}>
-            <div>All Men's Shoes</div>
-            <div>Sneakers</div>
-            <div>Soccer</div>
-            <div>Sandals & Slides</div>
-            <div>Workout & Gym</div>
-            <div>Basketball</div>
-            <div>Shoes $100 & Under</div>
-            <div>Golf</div>
-            <div>Baseball</div>
-            <div>Football</div>
+            <Link to="/soccers">
+              <div>Soccers</div>
+            </Link>
+            <Link to="/shirts">
+              <div>Shirts</div>
+            </Link>
+            <Link to="/sneakers">
+              <div>Sneakers</div>
+            </Link>
+            <Link to="/shorts">
+              <div>Shorts</div>
+            </Link>
+            <Link to="/pants">
+              <div>Pants</div>
+            </Link>
           </div>
         </div>
       </div>

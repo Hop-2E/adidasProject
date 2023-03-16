@@ -18,6 +18,7 @@ import Shirts from "./components/Shirts";
 import Sneaker from "./components/Sneakers";
 import Shorts from "./components/Shorts";
 import Soccer from "./components/Soccers";
+
 export const instance = axios.create({
   baseURL: "http://localhost:1234",
   headers: {

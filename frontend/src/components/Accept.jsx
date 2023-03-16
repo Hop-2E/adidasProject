@@ -12,14 +12,20 @@ const Accept = ({ accept }) => {
 
   useEffect(() => {
     getData();
-  }, [data]);
-
+  }, []);
   const accepted = async () => {
     if (!data.accept) {
       await instance.put(`items/${accept._id}`, {
         token: JSON.parse(localStorage.getItem("token")),
         storage: data.storage - 1,
         accept: true,
+      });
+      setData((prev) => {
+        return {
+          ...prev,
+          storage: prev.storage - 1,
+          accept: true,
+        };
       });
     } else {
       toast("already accepted");
