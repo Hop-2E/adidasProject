@@ -24,13 +24,14 @@ function Stories() {
     },
     image: {
       width: "19vw",
-      height: "45vh",
+      height: "25vh",
+      objectFit: "cover",
     },
     desp: {
       width: "17.55vw",
       fontWeight: "bolder",
-      paddingLeft: "15px",
-      fontSize: "15px",
+      paddingLeft: "20px",
+      fontSize: "14px",
       position: "absolute",
       marginTop: "-20px",
       marginLeft: "15px",
@@ -38,6 +39,7 @@ function Stories() {
     },
     text: {
       paddingLeft: "30px",
+      color:"#525252"
     },
   };
   return (

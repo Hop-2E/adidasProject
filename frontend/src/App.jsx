@@ -14,6 +14,7 @@ import Sags from "./pages/Sags";
 import MensShoes from "./components/mensShoes";
 import WomenShoes from "./components/WomenShoes";
 import KidsShoes from "./components/KidsShoes";
+import "./App.css"
 import Shirts from "./components/Shirts";
 import Sneaker from "./components/Sneakers";
 import Shorts from "./components/Shorts";
@@ -40,7 +41,7 @@ function App() {
           <Route path="/:id/:search" element={<Search />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/:user_id/item/:id" element={<Item />} />
-          <Route path="/sags" element={<Sags />} />
+          <Route path="/:id/sags" element={<Sags />} />
           <Route path="/men" element={<MensShoes />} />
           <Route path="/women" element={<WomenShoes />} />
           <Route path="/pants" element={<Pants />} />
